@@ -29,3 +29,12 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 40px;
+    height: auto;
+    top: 10px;
+}
