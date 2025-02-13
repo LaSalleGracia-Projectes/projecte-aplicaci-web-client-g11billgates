@@ -5,6 +5,17 @@ body {
     text-align: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: auto;
+    top: 10px;
+}
+
 header {
     background: linear-gradient(to right, #333, #666);
     padding: 20px;
@@ -30,21 +41,6 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 40px;
-    height: auto;
-    top: 10px;
-}
-
 .hero {
     padding: 50px;
     background: #f0f0f0;
@@ -52,18 +48,51 @@ nav ul li a:hover {
 
 .features {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
     padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .feature {
-    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f0f0f0;
     padding: 20px;
-    margin: 20px;
-    background: #ddd;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Asegura que los features tengan la imagen en la posición correcta */
+#feature-solo-gaming img,
+#feature-amigos img,
+#feature-match img {
+    order: 1;
+}
+
+#feature-nuevo-aqui img,
+#feature-crecimiento img {
+    order: -1;
+}
+
+.feature img {
+    width: 45%;
+    max-width: 350px;
+    height: auto;
     border-radius: 10px;
 }
+
+.feature-content {
+    width: 50%;
+    text-align: left;
+    padding: 10px;
+}
+
+
 
 .cta {
     padding: 50px;
@@ -76,10 +105,11 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
+    width: 100%;
 }
 
 footer ul {
-    list-style: none; 
+    list-style: none;
     padding: 0;
 }
 
@@ -94,5 +124,5 @@ footer a {
 }
 
 footer a:hover {
-    color: #fff; 
+    color: #fff;
 }
