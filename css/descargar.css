@@ -6,6 +6,20 @@ body {
     color: #ffffff;
 }
 
+/* Header Styles */
+header {
+    background: rgba(6, 13, 23, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(64, 169, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -20,19 +34,6 @@ body {
 
 .logo img:hover {
     transform: scale(1.1);
-}
-
-header {
-    background: rgba(6, 13, 23, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(64, 169, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 nav ul {
@@ -58,6 +59,8 @@ nav ul li a:hover {
     background: rgba(64, 169, 255, 0.1);
     color: #40A9FF;
 }
+
+/* Breadcrumb Styles */
 .breadcrumb {
     background: #071426;
     padding: 15px 20px;
@@ -78,5 +81,243 @@ nav ul li a:hover {
     content: ">";
     margin: 0 10px;
     color: #444;
+}
+
+.hero {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #071426 0%, #040B14 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(64, 169, 255, 0.1) 0%, transparent 70%);
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(64, 169, 255, 0.3);
+    position: relative;
+}
+
+.download-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.download-card {
+    background: rgba(64, 169, 255, 0.03);
+    border: 1px solid rgba(64, 169, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    width: 300px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(64, 169, 255, 0.1);
+    border-color: rgba(64, 169, 255, 0.3);
+}
+
+.download-card h2 {
+    color: #40A9FF;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.download-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 4px 12px rgba(64, 169, 255, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.download-card:hover img {
+    transform: scale(1.1);
+}
+
+.requirements {
+    background: #071426;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.requirements::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(64, 169, 255, 0.05) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.requirements h2 {
+    color: #40A9FF;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.requirements ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.requirements ul li {
+    margin: 15px 0;
+    padding: 20px;
+    background: rgba(64, 169, 255, 0.03);
+    border-radius: 15px;
+    border: 1px solid rgba(64, 169, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.requirements ul li:hover {
+    background: rgba(64, 169, 255, 0.05);
+    transform: translateX(5px);
+}
+
+button, .btn {
+    background: linear-gradient(135deg, #40A9FF 0%, #096DD9 100%);
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(64, 169, 255, 0.3);
+    background: linear-gradient(135deg, #40A9FF 20%, #096DD9 100%);
+}
+
+footer {
+    background: #071426;
+    color: white;
+    padding: 60px 20px 40px;
+}
+
+.footer-links {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 30px;
+}
+
+.footer-links div {
+    text-align: left;
+}
+
+.footer-links h4 {
+    color: #40A9FF;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 12px 0;
+}
+
+.footer-links a {
+    color: #8BB8E8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95em;
+}
+
+.footer-links a:hover {
+    color: #40A9FF;
+}
+
+.language-switcher {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.language-switcher button {
+    background: rgba(64, 169, 255, 0.1);
+    border: 1px solid rgba(64, 169, 255, 0.2);
+    color: #8BB8E8;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.language-switcher button:hover {
+    background: rgba(64, 169, 255, 0.2);
+    color: #40A9FF;
+    transform: translateY(-2px);
+}
+
+.language-switcher ul {
+    display: none;
+    list-style: none;
+    padding: 10px;
+    margin: 10px auto;
+    background: rgba(6, 13, 23, 0.95);
+    border: 1px solid rgba(64, 169, 255, 0.1);
+    border-radius: 15px;
+    width: max-content;
+}
+
+.language-switcher:hover ul {
+    display: block;
+}
+
+.language-switcher li {
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.language-switcher li:hover {
+    background: rgba(64, 169, 255, 0.1);
+    color: #40A9FF;
+}
+
+.copyright {
+    text-align: center;
+    color: #8BB8E8;
+    font-size: 0.9em;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(64, 169, 255, 0.1);
 }
 
