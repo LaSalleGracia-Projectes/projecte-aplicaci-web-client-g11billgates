@@ -1,8 +1,9 @@
 body {
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
+    background: #040B14;
+    color: #ffffff;
 }
 
 .logo {
@@ -11,15 +12,24 @@ body {
 }
 
 .logo img {
-    width: 40px;
+    width: 45px;
     height: auto;
-    top: 10px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(64, 169, 255, 0.3));
+}
+
+.logo img:hover {
+    transform: scale(1.1);
 }
 
 header {
-    background: linear-gradient(to right, #333, #666);
+    background: rgba(6, 13, 23, 0.95);
+    backdrop-filter: blur(10px);
     padding: 20px;
-    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(64, 169, 255, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,20 +47,62 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(64, 169, 255, 0.1);
+    color: #40A9FF;
 }
 
 .breadcrumb {
-    padding: 10px 20px;
+    background: #071426;
+    padding: 15px 20px;
     font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #40A9FF;
+    text-decoration: none;
+}
+
+.breadcrumb span {
     color: #666;
-    text-align: left;
+    margin-left: 10px;
+}
+
+.breadcrumb span::before {
+    content: ">";
+    margin: 0 10px;
+    color: #444;
 }
 
 .hero {
-    padding: 50px;
-    background: #f0f0f0;
+    background: linear-gradient(135deg, #071426 0%, #040B14 100%);
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(64, 169, 255, 0.1) 0%, transparent 70%);
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(64, 169, 255, 0.3);
 }
 
 .features {
@@ -63,34 +115,54 @@ nav ul li a {
 }
 
 .feature {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+    background: rgba(64, 169, 255, 0.03);
+    border: 1px solid rgba(64, 169, 255, 0.1);
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(64, 169, 255, 0.1);
 }
 
 .feature img {
     width: 45%;
-    max-width: 350px;
-    height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 12px rgba(64, 169, 255, 0.2));
+}
+
+.feature:hover img {
+    transform: scale(1.05);
 }
 
 .feature-content {
-    width: 50%;
-    text-align: left;
-    padding: 10px;
+    padding: 30px;
+}
+
+.feature h2 {
+    color: #40A9FF;
+    margin-bottom: 15px;
 }
 
 .why-teamup {
-    padding: 40px;
-    background: #e0e0e0;
-    text-align: center;
+    background: #071426;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.why-teamup::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(64, 169, 255, 0.05) 0%, transparent 100%);
+    pointer-events: none;
 }
 
 .why-teamup ul {
@@ -106,44 +178,89 @@ nav ul li a {
 }
 
 .why-teamup ul li::before {
-    content: "✔️";
-    margin-right: 10px;
-    font-size: 18px;
-    color: green;
+    content: "🎮";
+    margin-right: 15px;
+    font-size: 20px;
+    text-shadow: 0 0 10px rgba(64, 169, 255, 0.5);
 }
 
 .faq {
-    padding: 40px;
+    background: #040B14;
+    padding: 60px 20px;
 }
 
 .faq details {
-    margin: 10px 0;
+    background: rgba(64, 169, 255, 0.03);
+    border: 1px solid rgba(64, 169, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.faq details:hover {
+    background: rgba(64, 169, 255, 0.05);
+}
+
+.faq summary {
+    color: #40A9FF;
+    font-weight: 500;
     cursor: pointer;
 }
+
+.faq details[open] {
+    padding-bottom: 20px;
+}
+
+button, .btn {
+    background: linear-gradient(135deg, #40A9FF 0%, #096DD9 100%);
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(64, 169, 255, 0.3);
+}
+
 footer {
-    background: #222;
+    background: #071426;
     color: white;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
+    padding: 40px 20px;
 }
 
-footer ul {
-    list-style: none;
-    padding: 0;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
 }
 
-footer ul li {
-    display: inline-block;
-    margin: 0 15px;
+.footer-section h4 {
+    color: #40A9FF;
+    margin-bottom: 15px;
 }
 
-footer a {
-    color: #bbb;
+.footer-section a {
+    color: #8BB8E8;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-footer a:hover {
-    color: #fff;
+.footer-section a:hover {
+    color: #40A9FF;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(64, 169, 255, 0.1);
+    color: #8BB8E8;
 }
 
