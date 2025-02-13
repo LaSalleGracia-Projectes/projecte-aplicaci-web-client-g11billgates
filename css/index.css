@@ -91,8 +91,6 @@ nav ul li a {
     padding: 10px;
 }
 
-
-
 .cta {
     padding: 50px;
     background: #333;
@@ -100,28 +98,54 @@ nav ul li a {
 }
 
 footer {
-    background: #222;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    font-size: 0.9em;
 }
 
-footer ul {
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    text-align: left;
+}
+
+.footer-section h4 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.footer-section ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-footer ul li {
-    display: inline-block;
-    margin: 0 15px;
+.footer-section ul li {
+    margin: 8px 0;
 }
 
-footer a {
-    color: #bbb;
+.footer-section a {
+    color: #9e9e9e;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-footer a:hover {
-    color: #fff;
+.footer-section a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #9e9e9e;
+    font-size: 0.8em;
 }
