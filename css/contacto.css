@@ -80,3 +80,108 @@ nav ul li a:hover {
     margin: 0 10px;
     color: #444;
 }
+
+footer {
+    background: #071426;
+    color: white;
+    padding: 60px 20px 40px;
+}
+
+.footer-links {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 30px;
+}
+
+.footer-links div {
+    text-align: left;
+}
+
+.footer-links h4 {
+    color: #40A9FF;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 12px 0;
+}
+
+.footer-links a {
+    color: #8BB8E8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95em;
+}
+
+.footer-links a:hover {
+    color: #40A9FF;
+}
+
+.language-switcher {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.language-switcher button {
+    background: rgba(64, 169, 255, 0.1);
+    border: 1px solid rgba(64, 169, 255, 0.2);
+    color: #8BB8E8;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.language-switcher button:hover {
+    background: rgba(64, 169, 255, 0.2);
+    color: #40A9FF;
+    transform: translateY(-2px);
+}
+
+.language-switcher ul {
+    display: none;
+    list-style: none;
+    padding: 10px;
+    margin: 10px auto;
+    background: rgba(6, 13, 23, 0.95);
+    border: 1px solid rgba(64, 169, 255, 0.1);
+    border-radius: 15px;
+    width: max-content;
+}
+
+.language-switcher:hover ul {
+    display: block;
+}
+
+.language-switcher li {
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.language-switcher li:hover {
+    background: rgba(64, 169, 255, 0.1);
+    color: #40A9FF;
+}
+
+.copyright {
+    text-align: center;
+    color: #8BB8E8;
+    font-size: 0.9em;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(64, 169, 255, 0.1);
+}
