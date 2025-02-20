@@ -185,3 +185,178 @@ footer {
     padding-top: 20px;
     border-top: 1px solid rgba(64, 169, 255, 0.1);
 }
+
+/* Hero Section */
+.hero {
+    padding: 80px 40px;
+    background: linear-gradient(135deg, rgba(64, 169, 255, 0.1) 0%, rgba(6, 13, 23, 0.95) 100%);
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    color: #40A9FF;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px rgba(64, 169, 255, 0.3);
+}
+
+.hero p {
+    color: #8BB8E8;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* Mission & Join Sections */
+.mission, .join {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+    gap: 60px;
+}
+
+.join {
+    flex-direction: row-reverse;
+}
+
+.mission .text, .join .text {
+    flex: 1;
+}
+
+.mission img, .join img {
+    width: 45%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(64, 169, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mission img:hover, .join img:hover {
+    transform: translateY(-10px);
+}
+
+.mission h2, .join h2 {
+    color: #40A9FF;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.mission p, .join p {
+    color: #8BB8E8;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, rgba(64, 169, 255, 0.15) 0%, rgba(6, 13, 23, 0.95) 100%);
+    padding: 80px 40px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cta h2 {
+    color: #40A9FF;
+    font-size: 2.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 0 0 20px rgba(64, 169, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .mission, .join {
+        padding: 0 30px;
+        gap: 40px;
+    }
+
+    .hero h1, .cta h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 30px;
+    }
+
+    .mission, .join {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+        margin: 40px auto;
+    }
+
+    .mission img, .join img {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .mission h2, .join h2 {
+        font-size: 1.6em;
+    }
+
+    .cta {
+        padding: 60px 30px;
+    }
+
+    .cta h2 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.6em;
+    }
+
+    .hero p, .mission p, .join p {
+        font-size: 1em;
+    }
+
+    .mission, .join {
+        margin: 30px auto;
+    }
+
+    .mission img, .join img {
+        width: 100%;
+    }
+
+    .mission h2, .join h2 {
+        font-size: 1.4em;
+    }
+
+    .cta {
+        padding: 40px 20px;
+    }
+
+    .cta h2 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.4em;
+    }
+
+    .mission h2, .join h2, .cta h2 {
+        font-size: 1.2em;
+    }
+
+    .hero p, .mission p, .join p {
+        font-size: 0.9em;
+    }
+}
