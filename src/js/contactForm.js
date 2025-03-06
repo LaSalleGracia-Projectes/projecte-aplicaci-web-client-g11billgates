@@ -5,4 +5,9 @@ export function initContactForm() {
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    const name = form.querySelector('#name').value.trim();
+    const email = form.querySelector('#email').value.trim();
+    const message = form.querySelector('#message').value.trim();
+    const privacy = form.querySelector('#privacy').checked;
 })
