@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargar</title>
+    <title>Descargar TeamUp</title>
     <link rel="stylesheet" href="./css/descargar.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -17,30 +18,127 @@
             <ul>
                 <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="descargar.html">Descargar</a></li>
+                <li><a href="descargar.html" class="active">Descargar</a></li>
             </ul>
         </nav>
     </header>
+    
     <section class="breadcrumb">
-        <a href="index.html">Home</a><span>Descargar</span>
+        <div class="container">
+            <a href="index.html">Home</a><span>Descargar</span>
+        </div>
     </section>
+    
     <section class="hero">
-        <h1>DESCARGA TEAMUP Y EMPIEZA A JUGAR HOY</h1>
-        <p><strong>¿YA TIENES TEAMUP INSTALADO? <a href="#actualizar">¡ACTUALIZA A LA ÚLTIMA VERSIÓN!</a></strong></p>
-        <p>TeamUp es tu plataforma ideal para conectar con jugadores, organizar partidas y encontrar compañeros de equipo perfectos.
-        Descarga la aplicación y empieza a hacer match con gamers que comparten tus intereses y nivel de habilidad.</p>
-        
-        <button class="download-btn">DESCARGAR TEAMUP PARA IOS</button>
-
-        <p class="terms">Al descargar TeamUp, aceptas nuestros <a href="terminos_uso.html">Términos de Uso</a> y nuestra <a href="p_privacidad.html">Política de Privacidad</a>.</p>
+        <div class="container">
+            <h1>DESCARGA TEAMUP Y EMPIEZA A JUGAR HOY</h1>
+            <p class="hero-subtitle">Conecta con jugadores, organiza partidas y encuentra compañeros perfectos</p>
+            <div class="hero-animation">
+                <img src="./Imagenes/app-preview.png" alt="TeamUp App Preview" class="app-preview">
+            </div>
+        </div>
     </section>
+    
+    <section class="download-options">
+        <div class="container">
+            <h2>DESCARGA PARA TU DISPOSITIVO</h2>
+            <div class="cards-container">
+                <div class="download-card ios-card">
+                    <div class="platform-icon">
+                        <img src="./Imagenes/ios-icon.png" alt="iOS">
+                    </div>
+                    <h3>iOS</h3>
+                    <p>Disponible para iPhone y iPad con iOS 14 o superior</p>
+                    <button class="download-btn">DESCARGAR PARA iOS</button>
+                    <p class="exclusive-note">Exclusivo para dispositivos Apple</p>
+                </div>
+            </div>
+            <div class="coming-soon">
+                <p>Próximamente disponible para otras plataformas</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="actualizar" class="update-section">
+        <div class="container">
+            <h2>ACTUALIZA A LA ÚLTIMA VERSIÓN</h2>
+            <div class="update-content">
+                <div class="update-info">
+                    <h3>Versión 2.5.1</h3>
+                    <ul class="update-features">
+                        <li>Nuevo sistema de matchmaking mejorado</li>
+                        <li>Interfaz renovada y más intuitiva</li>
+                        <li>Soporte para nuevos juegos populares</li>
+                        <li>Corrección de errores y mejoras de rendimiento</li>
+                    </ul>
+                    <button class="update-btn">ACTUALIZAR AHORA</button>
+                </div>
+                <div class="update-image">
+                    <img src="./Imagenes/update-preview.png" alt="Nueva versión">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="requirements">
+        <div class="container">
+            <h2>REQUISITOS DEL SISTEMA</h2>
+            <div class="requirements-grid">
+                <div class="req-card ios-req">
+                    <h3>Requisitos para iOS</h3>
+                    <ul>
+                        <li>iOS 14.0 o superior</li>
+                        <li>iPhone 8 o superior</li>
+                        <li>iPad de 6ª generación o superior</li>
+                        <li>500 MB de espacio libre</li>
+                        <li>Conexión a Internet</li>
+                        <li>Cuenta de Apple ID</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <div class="container">
+            <h2>PREGUNTAS FRECUENTES</h2>
+            <div class="faq-item">
+                <h3>¿Cómo instalo TeamUp en mi iPhone o iPad?</h3>
+                <p>Simplemente descarga la aplicación desde esta página o desde la App Store, abre el archivo descargado y sigue las instrucciones de instalación en pantalla.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Es compatible con todos los dispositivos iOS?</h3>
+                <p>TeamUp es compatible con iPhone 8 o superior y iPad de 6ª generación o superior, siempre que tengan iOS 14.0 o una versión más reciente instalada.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Es gratuita la aplicación TeamUp para iOS?</h3>
+                <p>Sí, TeamUp es completamente gratuita para dispositivos iOS. Ofrecemos funciones premium opcionales mediante suscripción, pero todas las funciones básicas son gratuitas.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Cómo actualizo a la última versión en iOS?</h3>
+                <p>La aplicación te notificará cuando haya una actualización disponible. También puedes verificar actualizaciones manualmente en la App Store o descargar la última versión desde esta página.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Cuándo estará disponible para Android y PC?</h3>
+                <p>Estamos trabajando en las versiones para Android y PC/Mac. Suscríbete a nuestro boletín para recibir notificaciones cuando estén disponibles.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="terms-notice">
+        <div class="container">
+            <p>Al descargar TeamUp, aceptas nuestros <a href="terminos_uso.html">Términos de Uso</a> y nuestra <a href="p_privacidad.html">Política de Privacidad</a>.</p>
+        </div>
+    </section>
+    
     <footer>
         <div class="footer-links">
             <div>
-                <h4>Descargar</h4>
+                <h4>TeamUp</h4>
                 <ul>
                     <li><a href="sobre_nosotros.html">Sobre nosotros</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="descargar.html">Descargar</a></li>
                 </ul>
             </div>
             <div>
@@ -48,8 +146,15 @@
                 <ul>
                     <li><a href="terminos_uso.html">Términos de uso</a></li>
                     <li><a href="p_privacidad.html">Políticas de privacidad</a></li>
-                    <li><a href="terminos_uso.html">Términos de uso</a></li>
                     <li><a href="cookies.html">Políticas de cookies</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Soporte</h4>
+                <ul>
+                    <li><a href="faq.html">Preguntas frecuentes</a></li>
+                    <li><a href="ayuda.html">Centro de ayuda</a></li>
+                    <li><a href="reportar.html">Reportar problema</a></li>
                 </ul>
             </div>
         </div>
