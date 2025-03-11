@@ -1,38 +1,27 @@
-export function initContactForm() {
-    const form = document.querySelector('.contact-form form')
-    if(!form) return; 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    form.addEventListener("submit", function (event) {
+        const name = document.querySelector("#name").value.trim();
+        const email = document.querySelector("#email").value.trim();
+        const message = document.querySelector("#message").value.trim();
+        const privacy = document.querySelector("#privacy").checked;
 
-        const name = form.querySelector('#name').value.trim();
-        const email = form.querySelector('#email').value.trim();
-        const message = form.querySelector('#message').value.trim();
-        const privacy = form.querySelector('#privacy').checked;
-
-        if (!validateForm(name, email, message, privacy)) {
+        if (!name || !email || !message) {
+            alert("Por favor, completa todos los campos.");
+            event.preventDefault(); 
             return;
         }
-    });  
-}
 
-function validateForm(name, email, message, privacy) {
-    if (!name || !email || !message) {
-        showMessage('Por favor, completa todos los campos.', 'error');
-        return false;
-    }
+        if (!/\S+@\S+\.\S+/.test(email)) {
+            alert("Por favor, introduce un email válido.");
+            event.preventDefault();
+            return;
+        }
 
-    if (!validateEmail(email)) {
-        showMessage('Por favor, introduce un email válido.', 'error');
-        return false;
-    }
-
-    if (!privacy) {
-        showMessage('Debes aceptar la política de privacidad.', 'error');
-        return false;
-    }
-
-    return true;
-}
-
-
+        if (!privacy) {
+            alert("Debes aceptar la política de privacidad.");
+            event.preventDefault();
+        }
+    });
+});
