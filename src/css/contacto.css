@@ -281,3 +281,54 @@ footer {
     box-shadow: 0 5px 15px rgba(64, 169, 255, 0.3);
     background: linear-gradient(135deg, #40A9FF 20%, #096DD9 100%);
 }
+
+.message-container {
+    display: none;
+    padding: 20px;
+    margin: 0 0 30px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.1em;
+    animation: fadeIn 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.message-container.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: #34D399;
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.1);
+}
+
+.message-container.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #F87171;
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    box-shadow: 0 8px 32px rgba(239, 68, 68, 0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-container::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+

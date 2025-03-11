@@ -26,7 +26,8 @@
     </section>
     <section class="contact-form">
         <h1>Contacto</h1>
-        <form action="php/procesar.php" method="POST">
+        <div id="message-container" class="message-container"></div>
+        <form id="contactForm" action="php/procesar.php" method="POST">
             <div class="form-group">
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" required>
@@ -74,5 +75,6 @@
         </div>
         <p class="copyright">TeamUp ©2025 All rights reserved</p>
     </footer>
+    <script src="./js/contactForm.js"></script>
 </body>
 </html>
