@@ -274,3 +274,147 @@ footer {
         font-size: 1.3em;
     }
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content {
+        padding: 30px;
+    }
+
+    .content h1 {
+        font-size: 2em;
+    }
+
+    .footer-links {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    nav ul li {
+        margin: 0 8px;
+    }
+
+    nav ul li a {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .content h1 {
+        font-size: 1.8em;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-around;
+    }
+
+    .footer-links div {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 35px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    nav ul li a {
+        padding: 5px 10px;
+        font-size: 0.85em;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .content h1 {
+        font-size: 1.5em;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-links div {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .language-switcher button {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    .copyright {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 360px) {
+    nav ul li a {
+        padding: 4px 8px;
+        font-size: 0.8em;
+    }
+
+    .content h1 {
+        font-size: 1.3em;
+    }
+
+    .content h2 {
+        font-size: 1.1em;
+    }
+
+    .content p,
+    .content ul li {
+        font-size: 0.9em;
+    }
+
+    .content ul li::before {
+        font-size: 1em;
+    }
+}
+
+/* Ajustes para dispositivos con modo oscuro */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #040B14;
+    }
+
+    .content {
+        background: rgba(64, 169, 255, 0.05);
+    }
+}
+
+/* Ajustes para dispositivos con preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

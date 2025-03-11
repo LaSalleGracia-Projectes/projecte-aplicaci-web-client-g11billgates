@@ -333,3 +333,105 @@ ooter {
     border-top: 1px solid rgba(64, 169, 255, 0.1);
 }
 
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .features {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    nav ul li {
+        margin: 0 8px;
+    }
+
+    nav ul li a {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .features {
+        padding: 20px;
+    }
+
+    .feature img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    nav ul li a {
+        padding: 5px 10px;
+        font-size: 0.85em;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .features {
+        padding: 15px;
+    }
+
+    .feature-content {
+        padding: 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .footer-links div {
+        text-align: center;
+    }
+}
+
+@media (max-width: 360px) {
+    nav ul li a {
+        padding: 4px 8px;
+        font-size: 0.8em;
+    }
+
+    .hero h1 {
+        font-size: 1.6em;
+    }
+
+    .feature h2 {
+        font-size: 1.2em;
+    }
+}
+
