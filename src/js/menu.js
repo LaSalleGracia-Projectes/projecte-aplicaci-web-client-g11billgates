@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Script de menú cargado");
 
-    const hamburger = document.querySelector('.hamburger-menu');
+    const hamburgerButton = document.querySelector('.hamburger-menu');
     const navMenu = document.querySelector('.nav-menu');
     const overlay = document.querySelector('.overlay');
     const body = document.body;
 
-    if (!hamburger) {
+    if (!hamburgerButton) {
         console.error('Elemento hamburger no encontrado');
     }
     if (!navMenu) {
@@ -16,66 +16,67 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Elemento overlay no encontrado');
     }
 
-    if (!hamburger || !navMenu || !overlay) {
+    if (!hamburgerButton || !navMenu || !overlay) {
         return;
     }
 
     console.log("Todos los elementos encontrados");
 
-    // Función para abrir/cerrar el menú
-    function toggleMenu(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        console.log("Toggle menú");
-        hamburger.classList.toggle('active');
+    // Función para alternar el menú
+    function toggleMenu() {
+        hamburgerButton.classList.toggle('active');
         navMenu.classList.toggle('active');
         overlay.classList.toggle('active');
         
+        // Prevenir scroll cuando el menú está abierto
         if (navMenu.classList.contains('active')) {
             body.style.overflow = 'hidden';
         } else {
-            body.style.overflow = '';
+            body.style.overflow = 'auto';
         }
     }
 
-    // Función para cerrar el menú
-    function closeMenu() {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        body.style.overflow = '';
-        console.log("Menú cerrado");
+    // Event listeners
+    if (hamburgerButton) {
+        hamburgerButton.addEventListener('click', toggleMenu);
     }
-
-    // Evento click en el hamburger
-    hamburger.addEventListener('click', toggleMenu);
-    console.log("Evento click añadido al hamburger");
-
+    
+    if (overlay) {
+        overlay.addEventListener('click', toggleMenu);
+    }
+    
     // Cerrar menú al hacer clic en un enlace
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
+        link.addEventListener('click', function() {
+            if (navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
     });
-
-    // Cerrar menú al hacer clic en el overlay
-    overlay.addEventListener('click', closeMenu);
+    
+    // Cerrar menú al presionar escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
 
     // Cerrar menú al hacer clic fuera
     document.addEventListener('click', (e) => {
         const isMenuOpen = navMenu.classList.contains('active');
-        if (isMenuOpen && !hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            closeMenu();
+        if (isMenuOpen && !hamburgerButton.contains(e.target) && !navMenu.contains(e.target)) {
+            toggleMenu();
         }
     });
 
     // Cerrar menú al redimensionar la ventana
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-            closeMenu();
+            toggleMenu();
         }
     });
 
     // Asegurarse de que el menú esté cerrado al cargar la página
-    closeMenu();
+    toggleMenu();
 }); 
