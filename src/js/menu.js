@@ -76,7 +76,4 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleMenu();
         }
     });
-
-    // Asegurarse de que el menú esté cerrado al cargar la página
-    toggleMenu();
 }); 

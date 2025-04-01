@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre nosotros</title>
     <link rel="stylesheet" href="./css/sobre_nosotros.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="overlay"></div>
     <header>
         <div class="logo">
             <a href="index.html">
                 <img src="./Imagenes/LogoTeamUp.png" alt="Logo TeamUp" />
             </a>
         </div>            
-        <nav>
+        <button class="hamburger-menu mobile-only" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
             <ul>
                 <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -21,41 +28,43 @@
             </ul>
         </nav>
     </header>
-    <section class="breadcrumb">
-        <a href="index.html">Home</a><span>Sobre nosotros</span>
-    </section>
-    <section class="hero">
-        <h1>¿Qué es TeamUp?</h1>
-        <p>
-            TeamUp es una plataforma diseñada para conectar a jugadores de videojuegos competitivos de todo el mundo. 
-            Nuestra misión es ayudarte a encontrar compañeros de equipo que compartan tus intereses, juegos favoritos y nivel de habilidad.
-            TeamUp hace que el proceso sea rápido, sencillo y divertido.
-        </p>
-    </section>
-    <section class="mission">
-        <div class="text">
-            <h2>Nuestra Misión</h2>
+    <main>
+        <section class="breadcrumb">
+            <a href="index.html">Home</a><span>Sobre nosotros</span>
+        </section>
+        <section class="hero">
+            <h1>¿Qué es TeamUp?</h1>
             <p>
-                En TeamUp, creemos que los videojuegos no solo son entretenimiento, sino también una forma poderosa 
-                de construir comunidades y conexiones. Nuestro objetivo es derribar las barreras que enfrentan los 
-                jugadores al buscar compañeros de equipo, creando una experiencia inclusiva, segura y adaptada a cada gamer.
+                TeamUp es una plataforma diseñada para conectar a jugadores de videojuegos competitivos de todo el mundo. 
+                Nuestra misión es ayudarte a encontrar compañeros de equipo que compartan tus intereses, juegos favoritos y nivel de habilidad.
+                TeamUp hace que el proceso sea rápido, sencillo y divertido.
             </p>
-        </div>
-        <img src="Imagenes/Amigos.webp" alt="Nuestra misión">
-    </section>
-    <section class="join">
-        <img src="Imagenes/unete.webp" alt="Únete a Nosotros">
-        <div class="text">
-            <h2>Únete a Nosotros</h2>
-            <p>
-                Forma parte de una comunidad de gamers que comparten tu pasión. TeamUp está diseñado para ayudarte 
-                a disfrutar al máximo de tus partidas y mejorar tu experiencia de juego.
-            </p>
-        </div>
-    </section>
-    <section class="cta">
-        <h2>¡Conecta, juega y sube al siguiente nivel con TeamUp!</h2>
-    </section>
+        </section>
+        <section class="mission">
+            <div class="text">
+                <h2>Nuestra Misión</h2>
+                <p>
+                    En TeamUp, creemos que los videojuegos no solo son entretenimiento, sino también una forma poderosa 
+                    de construir comunidades y conexiones. Nuestro objetivo es derribar las barreras que enfrentan los 
+                    jugadores al buscar compañeros de equipo, creando una experiencia inclusiva, segura y adaptada a cada gamer.
+                </p>
+            </div>
+            <img src="Imagenes/Amigos.webp" alt="Nuestra misión">
+        </section>
+        <section class="join">
+            <img src="Imagenes/unete.webp" alt="Únete a Nosotros">
+            <div class="text">
+                <h2>Únete a Nosotros</h2>
+                <p>
+                    Forma parte de una comunidad de gamers que comparten tu pasión. TeamUp está diseñado para ayudarte 
+                    a disfrutar al máximo de tus partidas y mejorar tu experiencia de juego.
+                </p>
+            </div>
+        </section>
+        <section class="cta">
+            <h2>¡Conecta, juega y sube al siguiente nivel con TeamUp!</h2>
+        </section>
+    </main>
     <footer>
         <div class="footer-links">
             <div>
@@ -85,5 +94,6 @@
         <p class="copyright">TeamUp ©2025 All rights reserved</p>
     </footer>
     <script src="./js/languageChanger.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 </html>
