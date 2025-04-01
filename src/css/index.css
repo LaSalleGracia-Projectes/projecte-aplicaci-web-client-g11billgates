@@ -64,6 +64,7 @@ nav ul li a:hover {
     background: linear-gradient(135deg, #071426 0%, #040B14 100%);
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .hero::before {
@@ -141,6 +142,7 @@ nav ul li a:hover {
     background: #071426;
     color: white;
     position: relative;
+    text-align: center;
 }
 
 .cta::after {
@@ -152,6 +154,12 @@ nav ul li a:hover {
     bottom: 0;
     background: linear-gradient(45deg, rgba(64, 169, 255, 0.05) 0%, transparent 100%);
     pointer-events: none;
+}
+
+.cta-button {
+    margin-top: 20px;
+    font-size: 1.1em;
+    padding: 15px 30px;
 }
 
 button, .btn {
@@ -299,48 +307,102 @@ footer {
         padding: 15px;
     }
 
-    nav ul li {
-        margin: 0 8px;
+    .hamburger-menu {
+        display: block;
     }
 
-    nav ul li a {
-        padding: 6px 12px;
-        font-size: 0.9em;
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(6, 13, 23, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 80px 20px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        display: block;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .nav-menu ul li {
+        width: 100%;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .nav-menu ul li a {
+        display: block;
+        padding: 15px;
+        font-size: 1.2em;
+    }
+
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
 
     .hero {
-        padding: 60px 15px;
+        padding: 40px 15px;
+        text-align: center;
     }
 
     .hero h1 {
         font-size: 1.8em;
+        line-height: 1.4;
     }
 
     .feature {
         flex-direction: column;
-        text-align: center;
         padding: 20px;
+        margin: 0 0 20px 0;
+        text-align: center;
     }
 
     .feature img {
-        width: 80%;
-        margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 20px;
+        display: block;
     }
 
     .feature-content {
         width: 100%;
-        padding: 15px;
+        padding: 0;
+    }
+
+    .cta {
+        padding: 40px 20px;
         text-align: center;
     }
 
     .footer-links {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
         gap: 40px;
-        justify-content: space-around;
+        padding: 0 20px;
     }
 
     .footer-links div {
-        min-width: 200px;
+        text-align: center;
+        width: 100%;
     }
 }
 
@@ -349,50 +411,20 @@ footer {
         width: 35px;
     }
 
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 0 5px;
-    }
-
-    nav ul li a {
-        padding: 5px 10px;
-        font-size: 0.85em;
-    }
-
-    .hero {
-        padding: 40px 10px;
-    }
-
     .hero h1 {
         font-size: 1.5em;
     }
 
-    .features {
-        padding: 15px;
-    }
-
-    .feature {
-        margin: 10px 0;
-    }
-
     .feature img {
-        width: 90%;
-    }
-
-    .feature-content {
-        padding: 10px;
+        max-width: 250px;
     }
 
     .feature-content h2 {
         font-size: 1.3em;
+    }
+
+    .feature-content p {
+        font-size: 0.9em;
     }
 
     button, .btn {
@@ -400,16 +432,12 @@ footer {
         font-size: 0.9em;
     }
 
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 30px;
+    .nav-menu {
+        width: 100%;
     }
 
-    .footer-links div {
-        min-width: unset;
-        width: 100%;
+    .footer-links {
+        gap: 30px;
     }
 
     .language-switcher button {
@@ -417,17 +445,20 @@ footer {
         font-size: 0.85em;
     }
 
-    .copyright {
-        font-size: 0.8em;
+    .cta h2 {
+        font-size: 1.6em;
+    }
+
+    .cta p {
+        font-size: 0.9em;
+    }
+
+    footer {
+        padding: 40px 20px 20px;
     }
 }
 
 @media (max-width: 360px) {
-    nav ul li a {
-        padding: 4px 8px;
-        font-size: 0.8em;
-    }
-
     .hero h1 {
         font-size: 1.3em;
     }
@@ -437,7 +468,7 @@ footer {
     }
 
     .feature-content p {
-        font-size: 0.9em;
+        font-size: 0.85em;
     }
 
     button, .btn {
@@ -463,4 +494,49 @@ footer {
         animation: none !important;
         transition: none !important;
     }
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Estilos del nav */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    background: rgba(64, 169, 255, 0.1);
+    color: #40A9FF;
 }
