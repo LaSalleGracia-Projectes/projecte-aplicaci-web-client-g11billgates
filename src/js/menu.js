@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger-menu');
     const navMenu = document.querySelector('.nav-menu');
+    const overlay = document.querySelector('.overlay');
     const body = document.body;
 
-    if (!hamburger || !navMenu) {
+    if (!hamburger || !navMenu || !overlay) {
         console.error('Elementos del menú no encontrados');
         return;
     }
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
         
         if (navMenu.classList.contains('active')) {
             body.style.overflow = 'hidden';
@@ -22,38 +24,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Función para cerrar el menú
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        body.style.overflow = '';
+    }
+
     // Evento click en el hamburger
     hamburger.addEventListener('click', toggleMenu);
 
     // Cerrar menú al hacer clic en un enlace
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            body.style.overflow = '';
-        });
+        link.addEventListener('click', closeMenu);
     });
+
+    // Cerrar menú al hacer clic en el overlay
+    overlay.addEventListener('click', closeMenu);
 
     // Cerrar menú al hacer clic fuera
     document.addEventListener('click', (e) => {
         const isMenuOpen = navMenu.classList.contains('active');
         if (isMenuOpen && !hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            toggleMenu();
+            closeMenu();
         }
     });
 
     // Cerrar menú al redimensionar la ventana
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            body.style.overflow = '';
+            closeMenu();
         }
     });
 
     // Asegurarse de que el menú esté cerrado al cargar la página
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-    body.style.overflow = '';
+    closeMenu();
 }); 
