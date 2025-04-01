@@ -1,9 +1,39 @@
+/* Reset y estilos básicos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background: #040B14;
     color: #ffffff;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+main {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Estilos de header y navegación */
+header {
+    background: rgba(6, 13, 23, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(64, 169, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .logo {
@@ -22,41 +52,73 @@ body {
     transform: scale(1.1);
 }
 
-header {
-    background: rgba(6, 13, 23, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(64, 169, 255, 0.1);
+/* Estilos del menú hamburguesa - debe estar definido antes de los media queries */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+/* Estilos del nav */
+.nav-menu {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-nav ul {
+.nav-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    gap: 20px;
 }
 
-nav ul li {
-    margin: 0 15px;
+.nav-menu ul li {
+    margin: 0;
 }
 
-nav ul li a {
+.nav-menu ul li a {
     color: #ffffff;
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 20px;
     transition: all 0.3s ease;
+    display: block;
 }
 
-nav ul li a:hover {
+.nav-menu ul li a:hover {
     background: rgba(64, 169, 255, 0.1);
     color: #40A9FF;
+}
+
+/* Contenedor adicional para el menú */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
 }
 
 .breadcrumb {
@@ -86,6 +148,7 @@ nav ul li a:hover {
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .hero::before {
@@ -103,24 +166,40 @@ nav ul li a:hover {
     margin-bottom: 20px;
     color: #ffffff;
     text-shadow: 0 0 20px rgba(64, 169, 255, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.6;
 }
 
 .features {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 40px;
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: rgba(64, 169, 255, 0.03);
     border: 1px solid rgba(64, 169, 255, 0.1);
     border-radius: 20px;
+    padding: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     backdrop-filter: blur(5px);
+    gap: 30px;
 }
 
 .feature:hover {
@@ -130,9 +209,11 @@ nav ul li a:hover {
 
 .feature img {
     width: 45%;
+    max-width: 350px;
     border-radius: 15px;
     transition: transform 0.3s ease;
     filter: drop-shadow(0 4px 12px rgba(64, 169, 255, 0.2));
+    object-fit: cover;
 }
 
 .feature:hover img {
@@ -140,18 +221,34 @@ nav ul li a:hover {
 }
 
 .feature-content {
-    padding: 30px;
+    width: 50%;
+    padding-right: 10px;
 }
 
-.feature h2 {
+.feature-content h2 {
     color: #40A9FF;
     margin-bottom: 15px;
+}
+
+.feature-content p, .feature-content ul {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.feature-content ul {
+    padding-left: 20px;
+}
+
+.feature-content ul li {
+    margin-bottom: 8px;
 }
 
 .why-teamup {
     background: #071426;
     padding: 60px 20px;
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .why-teamup::after {
@@ -165,16 +262,27 @@ nav ul li a:hover {
     pointer-events: none;
 }
 
+.why-teamup h2 {
+    margin-bottom: 25px;
+    color: #40A9FF;
+    position: relative;
+    z-index: 1;
+    font-size: 2em;
+}
+
 .why-teamup ul {
     list-style: none;
     padding: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .why-teamup ul li {
     display: flex;
     align-items: center;
     font-size: 16px;
-    margin: 10px 0;
+    margin: 16px 0;
+    line-height: 1.5;
 }
 
 .why-teamup ul li::before {
@@ -182,11 +290,20 @@ nav ul li a:hover {
     margin-right: 15px;
     font-size: 20px;
     text-shadow: 0 0 10px rgba(64, 169, 255, 0.5);
+    flex-shrink: 0;
 }
 
 .faq {
     background: #040B14;
     padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq h2 {
+    margin-bottom: 25px;
+    color: #40A9FF;
+    font-size: 2em;
 }
 
 .faq details {
@@ -206,10 +323,17 @@ nav ul li a:hover {
     color: #40A9FF;
     font-weight: 500;
     cursor: pointer;
+    padding: 5px 0;
 }
 
 .faq details[open] {
     padding-bottom: 20px;
+}
+
+.faq details p {
+    margin-top: 15px;
+    line-height: 1.6;
+    padding: 0 5px;
 }
 
 button, .btn {
@@ -228,7 +352,7 @@ button:hover, .btn:hover {
     box-shadow: 0 5px 15px rgba(64, 169, 255, 0.3);
 }
 
-ooter {
+footer {
     background: #071426;
     color: white;
     padding: 60px 20px 40px;
@@ -333,6 +457,7 @@ ooter {
     border-top: 1px solid rgba(64, 169, 255, 0.1);
 }
 
+/* Responsive Design */
 @media (max-width: 1024px) {
     .hero h1 {
         font-size: 2.2em;
@@ -341,20 +466,90 @@ ooter {
     .features {
         padding: 30px;
     }
+    
+    .feature {
+        padding: 25px;
+    }
+
+    .why-teamup, .faq {
+        padding: 50px 30px;
+    }
+
+    .footer-links {
+        gap: 60px;
+    }
 }
 
 @media (max-width: 768px) {
-    header {
+    .hamburger-menu {
+        display: block;
+        position: relative;
+        z-index: 1002;
+        background: rgba(64, 169, 255, 0.1);
+        padding: 8px 10px;
+        border-radius: 5px;
+        border: 1px solid rgba(64, 169, 255, 0.2);
+    }
+    
+    .hamburger-menu:hover {
+        background: rgba(64, 169, 255, 0.2);
+    }
+    
+    .hamburger-menu span {
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 5px 0;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(6, 13, 23, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 80px 20px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        display: block;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding-top: 20px;
+    }
+
+    .nav-menu ul li {
+        width: 100%;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .nav-menu ul li a {
+        display: block;
         padding: 15px;
+        font-size: 1.2em;
+        width: 100%;
     }
 
-    nav ul li {
-        margin: 0 8px;
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
     }
 
-    nav ul li a {
-        padding: 6px 12px;
-        font-size: 0.9em;
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
 
     .hero {
@@ -366,72 +561,198 @@ ooter {
     }
 
     .features {
-        padding: 20px;
+        padding: 30px 15px;
+    }
+
+    .feature {
+        flex-direction: column;
+        padding: 20px 15px;
+        align-items: center;
     }
 
     .feature img {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 0 5px;
-    }
-
-    nav ul li a {
-        padding: 5px 10px;
-        font-size: 0.85em;
-    }
-
-    .hero {
-        padding: 40px 20px;
-    }
-
-    .hero h1 {
-        font-size: 1.8em;
-    }
-
-    .features {
-        padding: 15px;
+        width: 90%;
+        max-width: 300px;
+        margin-bottom: 10px;
+        order: 1;
     }
 
     .feature-content {
-        padding: 20px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        order: 2;
+    }
+
+    /* Invertir orden específicamente para las features pares */
+    #chat-tiempo-real .feature-content,
+    #filtros-avanzados .feature-content {
+        order: 1;
+    }
+    
+    #chat-tiempo-real img,
+    #filtros-avanzados img {
+        order: 2;
+    }
+
+    .why-teamup, .faq {
+        padding: 40px 20px;
+    }
+
+    .why-teamup h2, .faq h2 {
+        font-size: 1.8em;
+    }
+
+    .why-teamup ul li {
+        font-size: 15px;
+        align-items: flex-start;
     }
 
     .footer-links {
         flex-direction: column;
-        gap: 40px;
         align-items: center;
+        gap: 40px;
+        padding: 0 20px;
     }
 
     .footer-links div {
         text-align: center;
+        width: 100%;
+    }
+
+    .mobile-only {
+        display: block !important;
     }
 }
 
-@media (max-width: 360px) {
-    nav ul li a {
-        padding: 4px 8px;
-        font-size: 0.8em;
+@media (max-width: 480px) {
+    .logo img {
+        width: 35px;
+    }
+
+    .hero {
+        padding: 40px 15px;
     }
 
     .hero h1 {
         font-size: 1.6em;
     }
 
-    .feature h2 {
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .features {
+        padding: 20px 10px;
+        gap: 30px;
+    }
+
+    .feature {
+        padding: 15px 10px;
+    }
+
+    .feature img {
+        max-width: 250px;
+    }
+
+    .feature-content h2 {
+        font-size: 1.4em;
+    }
+
+    .feature-content p, .feature-content ul {
+        font-size: 0.9em;
+    }
+
+    .why-teamup, .faq {
+        padding: 30px 15px;
+    }
+
+    .why-teamup h2, .faq h2 {
+        font-size: 1.6em;
+    }
+
+    .why-teamup ul li {
+        font-size: 0.9em;
+        margin: 12px 0;
+    }
+
+    .why-teamup ul li::before {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .faq details {
+        padding: 12px;
+    }
+    
+    .faq details p {
+        font-size: 0.9em;
+    }
+
+    .nav-menu {
+        width: 100%;
+    }
+
+    .footer-links {
+        gap: 30px;
+    }
+
+    .language-switcher button {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    footer {
+        padding: 40px 20px 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.4em;
+    }
+
+    .feature-content h2 {
         font-size: 1.2em;
+    }
+
+    .faq summary {
+        font-size: 0.9em;
+    }
+
+    .breadcrumb {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+}
+
+/* Ajustes para dispositivos con modo oscuro */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #040B14;
+    }
+
+    .feature {
+        background: rgba(64, 169, 255, 0.05);
+    }
+}
+
+/* Ajustes para dispositivos con preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Utilidades */
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block !important;
     }
 }
 
