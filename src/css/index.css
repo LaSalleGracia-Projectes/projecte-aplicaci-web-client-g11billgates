@@ -265,10 +265,26 @@ nav ul li a:hover {
     pointer-events: none;
 }
 
-.cta-button {
-    margin-top: 20px;
-    font-size: 1.1em;
-    padding: 15px 30px;
+.cta h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    position: relative;
+    z-index: 1;
+}
+
+.cta p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.cta button, .cta-button {
+    padding: 12px 28px;
+    font-size: 1.05em;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
 }
 
 button, .btn {
@@ -518,8 +534,21 @@ footer {
     }
 
     .cta {
-        padding: 40px 20px;
-        text-align: center;
+        padding: 50px 20px;
+    }
+    
+    .cta h2 {
+        margin-bottom: 22px;
+        font-size: 1.8em;
+    }
+    
+    .cta-text {
+        margin-bottom: 28px;
+        padding: 0 10px;
+    }
+    
+    .cta-button {
+        margin-top: 10px;
     }
 
     .footer-links {
@@ -597,12 +626,26 @@ footer {
         font-size: 0.85em;
     }
 
+    .cta {
+        padding: 40px 15px;
+    }
+    
     .cta h2 {
         font-size: 1.6em;
+        margin-bottom: 24px;
+        line-height: 1.3;
     }
-
-    .cta p {
-        font-size: 0.9em;
+    
+    .cta-text {
+        font-size: 0.95em;
+        margin-bottom: 30px;
+        line-height: 1.7;
+        padding: 0 10px;
+    }
+    
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 0.95em;
     }
 
     footer {
