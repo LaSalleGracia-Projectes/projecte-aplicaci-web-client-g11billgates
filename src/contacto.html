@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="./css/contacto.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./Imagenes/LogoTeamUp.png" alt="Logo TeamUp" />
+            </a>
+        </div>            
+        <button class="hamburger-menu mobile-only" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="descargar.html">Descargar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="breadcrumb">
+            <a href="index.html">Home</a><span>Contacto</span>
+        </section>
+        <section class="contact-form">
+            <h1>Contacto</h1>
+            <div id="message-container" class="message-container"></div>
+            <form id="contactForm" action="php/procesar.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">Acepto la <a href="p_privacidad.html">política de privacidad</a></label>
+                </div>
+                <button type="submit" class="submit-btn">ENVIAR</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <div>
+                <h4>TeamUp</h4>
+                <ul>
+                    <li><a href="sobre_nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="descargar.html">Descargar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="terminos_uso.html">Términos de uso</a></li>
+                    <li><a href="p_privacidad.html">Políticas de privacidad</a></li>
+                    <li><a href="cookies.html">Políticas de cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="language-switcher">
+            <button>🌍 Español ▼</button>
+            <ul>
+                <li>🇪🇸 Español</li>
+                <li>🇬🇧 English</li>
+            </ul>
+        </div>
+        <p class="copyright">TeamUp ©2025 All rights reserved</p>
+    </footer>
+    <script src="./js/contactForm.js"></script>
+    <script src="./js/languageChanger.js"></script>
+    <script src="./js/menu.js"></script>
+</body>
+</html>
