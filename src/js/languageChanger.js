@@ -329,7 +329,7 @@ const translations = {
         nav_download: "Herunterladen",
 
         // Breadcrumb
-        home: "Home",
+        home: "Startseite",
         contact: "Kontakt",
         about: "Über Uns",
         download: "Herunterladen",
@@ -340,12 +340,12 @@ const translations = {
 
         // About Us Page
         about_title: "Was ist TeamUp?",
-        about_intro: "TeamUp ist eine Plattform, die Spieler von Wettbewerbsspielen aus der ganzen Welt miteinander verbindet. Unsere Mission ist es, dir zu helfen, Teamkollegen zu finden, die deine Interessen, Lieblingsspiele und dein Fähigkeitsniveau teilen. TeamUp macht den Prozess schnell, einfach und unterhaltsam.",
+        about_intro: "TeamUp ist eine Plattform, die entwickelt wurde, um kompetitive Videospieler aus der ganzen Welt zu verbinden. Unsere Mission ist es, dir zu helfen, Teammitglieder zu finden, die deine Interessen, Lieblingsspiele und dein Können teilen. TeamUp macht den Prozess schnell, einfach und unterhaltsam.",
         about_mission_title: "Unsere Mission",
-        about_mission_content: "Bei TeamUp glauben wir, dass Videospiele nicht nur Unterhaltung sind, sondern auch eine kraftvolle Möglichkeit, Gemeinschaften und Verbindungen aufzubauen. Unser Ziel ist es, die Barrieren abzubauen, mit denen Spieler bei der Suche nach Teamkollegen konfrontiert werden, und ein inklusives, sicheres und personalisiertes Erlebnis für jeden Gamer zu schaffen.",
+        about_mission_content: "Bei TeamUp glauben wir, dass Videospiele nicht nur Unterhaltung sind, sondern auch eine leistungsstarke Möglichkeit, Gemeinschaften und Verbindungen aufzubauen. Unser Ziel ist es, die Hindernisse zu beseitigen, mit denen Spieler konfrontiert sind, wenn sie nach Teammitgliedern suchen, und ein inklusives, sicheres und personalisiertes Erlebnis für jeden Gamer zu schaffen.",
         about_join_title: "Mach mit",
-        about_join_content: "Werde Teil einer Gemeinschaft von Gamern, die deine Leidenschaft teilen. TeamUp wurde entwickelt, um dir zu helfen, das Beste aus deinen Matches herauszuholen und dein Spielerlebnis zu verbessern.",
-        about_cta: "Verbinde dich, spiele und steige mit TeamUp auf die nächste Stufe!",
+        about_join_content: "Werde Teil einer Gemeinschaft von Gamern, die deine Leidenschaft teilen. TeamUp wurde entwickelt, um dir zu helfen, das Beste aus deinen Spielen herauszuholen und dein Spielerlebnis zu verbessern.",
+        about_cta: "Verbinde dich, spiele und steige auf mit TeamUp!",
 
         // Contact Form
         contact_title: "Kontakt",
@@ -364,78 +364,6 @@ const translations = {
         message_sent: "Nachricht erfolgreich gesendet.",
         message_error: "Fehler beim Senden der Nachricht. Bitte versuche es erneut.",
 
-        // Download Page
-        download_hero_title: "LADE TEAMUP HERUNTER UND STARTE NOCH HEUTE",
-        download_hero_subtitle: "Verbinde dich mit Spielern, organisiere Matches und finde perfekte Teamkollegen",
-        download_device_title: "HERUNTERLADEN FÜR DEIN GERÄT",
-        download_ios_description: "Verfügbar für iPhone und iPad mit iOS 14 oder höher",
-        download_button_ios: "FÜR iOS HERUNTERLADEN",
-        download_exclusive_note: "Exklusiv für Apple-Geräte",
-        download_coming_soon: "Demnächst für andere Plattformen verfügbar",
-        download_update_title: "AKTUALISIERE AUF DIE NEUESTE VERSION",
-        download_version: "Version 2.5.1",
-        download_update_features: [
-            "Neues verbessertes Matchmaking-System",
-            "Erneuerte und intuitivere Benutzeroberfläche",
-            "Unterstützung für neue beliebte Spiele",
-            "Fehlerbehebungen und Leistungsverbesserungen"
-        ],
-        download_update_button: "JETZT AKTUALISIEREN",
-        download_requirements_title: "SYSTEMANFORDERUNGEN",
-        download_ios_requirements_title: "Anforderungen für iOS",
-        download_ios_requirements: [
-            "iOS 14.0 oder höher",
-            "iPhone 8 oder höher",
-            "iPad 6. Generation oder höher",
-            "500 MB freier Speicherplatz",
-            "Internetverbindung",
-            "Apple ID-Konto"
-        ],
-        download_faq_title: "HÄUFIG GESTELLTE FRAGEN",
-        download_faq_titles: [
-            "Wie installiere ich TeamUp auf meinem iPhone oder iPad?",
-            "Ist es mit allen iOS-Geräten kompatibel?",
-            "Ist die TeamUp-App kostenlos für iOS?",
-            "Wie aktualisiere ich auf die neueste Version unter iOS?",
-            "Wann wird es für Android und PC verfügbar sein?"
-        ],
-        download_faq_contents: [
-            "Lade einfach die App von dieser Seite oder aus dem App Store herunter, öffne die heruntergeladene Datei und folge den Installationsanweisungen auf dem Bildschirm.",
-            "TeamUp ist mit iPhone 8 oder höher und iPad 6. Generation oder höher kompatibel, solange iOS 14.0 oder eine neuere Version installiert ist.",
-            "Ja, TeamUp ist für iOS-Geräte völlig kostenlos. Wir bieten optionale Premium-Funktionen über ein Abonnement an, aber alle Grundfunktionen sind kostenlos.",
-            "Die App benachrichtigt dich, wenn ein Update verfügbar ist. Du kannst auch manuell im App Store nach Updates suchen oder die neueste Version von dieser Seite herunterladen.",
-            "Wir arbeiten an Versionen für Android und PC/Mac. Abonniere unseren Newsletter, um benachrichtigt zu werden, wenn sie verfügbar sind."
-        ],
-        download_terms_notice: "Durch das Herunterladen von TeamUp akzeptierst du unsere %terms% und unsere %privacy%.",
-
-        // Index Page
-        index_hero_connect: "Verbinde dich mit Spielern wie dir.",
-        index_hero_organize: "Organisiere Spiele. Bilde Teams.",
-        index_hero_all: "Alles an einem Ort.",
-        index_get_teamup: "TeamUp holen",
-        
-        // Features
-        index_solo_gaming_title: "Solo Gaming",
-        index_solo_gaming_text: "Finde Leute, teile Fähigkeiten, bilde Teams und gewinne.",
-        index_download_now: "Jetzt herunterladen",
-        
-        index_new_here_title: "Neu hier?",
-        index_new_here_text: "Entdecke wie es funktioniert",
-        index_learn_more: "Mehr erfahren",
-        
-        index_friends_title: "Freunde",
-        index_friends_text: "Finde neue Freunde zum Spielen oder einfach zum Chatten über dein Lieblingsspiel.",
-        
-        index_growth_title: "Kontinuierliches Wachstum",
-        index_growth_text: "Werde Teil einer aktiven Community mit tausenden von Gamern.",
-        
-        index_match_title: "Sofortiges Match",
-        index_match_text: "Finde passende Spieler und beginne, Spiele zu planen.",
-        
-        // CTA Section
-        index_cta_title: "Es ist Zeit, Gaming in den Mittelpunkt zu stellen",
-        index_cta_text: "Verabschiede dich von #solo-gaming, #toxizität und der #erfolglosen-suche nach #kompatiblen-spielern.",
-
         // Footer
         footer_download: "Herunterladen",
         footer_legal: "Rechtliches",
@@ -443,10 +371,154 @@ const translations = {
         footer_privacy: "Datenschutzrichtlinie",
         footer_cookies: "Cookie-Richtlinie",
         copyright: "TeamUp ©2025 Alle Rechte vorbehalten",
+
+        // Privacy Policy Page
+        privacy_title: "Datenschutzrichtlinie",
+        privacy_intro: "Willkommen bei TeamUp. Diese Datenschutzrichtlinie erklärt, wie wir deine Informationen sammeln, verwenden, offenlegen und schützen, wenn du unsere Plattform nutzt.",
+        privacy_section1_title: "1. Informationen, die wir sammeln",
+        privacy_section1_content: "Wir sammeln Informationen, die du uns direkt zur Verfügung stellst, einschließlich, aber nicht beschränkt auf:",
+        privacy_section1_list: [
+            "Name und Kontaktinformationen",
+            "Kontoanmeldeinformationen",
+            "Profilinformationen",
+            "Kommunikationspräferenzen",
+        ],
+        privacy_section2_title: "2. Wie wir deine Informationen verwenden",
+        privacy_section2_content: "Wir verwenden die gesammelten Informationen, um:",
+        privacy_section2_list: [
+            "Unsere Dienste bereitzustellen und zu warten",
+            "Die Benutzererfahrung zu verbessern",
+            "Wichtige Benachrichtigungen zu senden",
+            "Auf deine Anfragen zu antworten",
+        ],
+        privacy_section3_title: "3. Informationsaustausch",
+        privacy_section3_content: "Wir verkaufen oder vermieten deine persönlichen Daten nicht an Dritte. Wir können deine Informationen nur unter folgenden Umständen teilen:",
+        privacy_section3_list: [
+            "Mit deiner Zustimmung",
+            "Um gesetzlichen Verpflichtungen nachzukommen",
+            "Um unsere Rechte und Sicherheit zu schützen",
+        ],
+        privacy_section4_title: "4. Datensicherheit",
+        privacy_section4_content: "Wir implementieren Sicherheitsmaßnahmen zum Schutz deiner persönlichen Daten vor unbefugtem Zugriff oder Offenlegung.",
+        privacy_section5_title: "5. Deine Rechte",
+        privacy_section5_content: "Du hast das Recht, auf deine persönlichen Daten zuzugreifen, sie zu korrigieren oder zu löschen. Um diese Rechte auszuüben, kontaktiere uns.",
+        privacy_section6_title: "6. Änderungen dieser Richtlinie",
+        privacy_section6_content: "Wir können diese Richtlinie regelmäßig aktualisieren. Wir werden dich über wesentliche Änderungen informieren.",
+        privacy_section7_title: "7. Kontakt",
+        privacy_section7_content: "Wenn du Fragen zu dieser Richtlinie hast, kontaktiere uns unter: privacy@teamup.com",
+
+        // Terms of Use Page
+        terms_title: "Nutzungsbedingungen",
+        terms_intro:
+            "Durch den Zugriff auf und die Nutzung von TeamUp stimmst du zu, an diese Nutzungsbedingungen gebunden zu sein.",
+        terms_section1_title: "1. Annahme der Bedingungen",
+        terms_section1_content: "Durch den Zugriff auf oder die Nutzung der TeamUp-Plattform stimmst du zu, diese Nutzungsbedingungen einzuhalten.",
+        terms_section2_title: "2. Dienstbeschreibung",
+        terms_section2_content: "TeamUp ist eine Plattform zur Verbindung von Spielern und zum Organisieren von Matches. Die Nutzung ist persönlich und nicht kommerziell.",
+        terms_section3_title: "3. Teilnahmebedingungen",
+        terms_section3_content: "Du musst mindestens 18 Jahre alt sein oder das gesetzliche Mindestalter in deinem Land haben.",
+        terms_section4_title: "4. Kontoregistrierung und Sicherheit",
+        terms_section4_content: "Du bist für die Aufrechterhaltung der Sicherheit deines Kontos verantwortlich.",
+        terms_section4_list: [
+            "Du bist für die Sicherheit deiner Anmeldedaten verantwortlich.",
+            "Teile dein Konto nicht und verwende es nicht für illegale Zwecke.",
+        ],
+        terms_section5_title: "5. Benutzerverhalten",
+        terms_section5_content: "Du stimmst zu, Folgendes nicht zu tun:",
+        terms_section5_list: [
+            "Nutze die Plattform nur für legitime Zwecke.",
+            "Respektiere andere Benutzer und vermeide toxisches Verhalten.",
+            "Veröffentliche keine beleidigenden oder illegalen Inhalte.",
+        ],
+        terms_section6_title: "6. Von Benutzern generierte Inhalte",
+        terms_section6_content: "Durch das Hochladen von Inhalten gewährst du TeamUp eine weltweite Lizenz zur Anzeige und Änderung.",
+        terms_section7_title: "7. Haftungsbeschränkung",
+        terms_section7_content: "TeamUp ist für bestimmte Aspekte nicht verantwortlich:",
+        terms_section7_list: [
+            "TeamUp garantiert nicht, dass der Dienst fehlerfrei ist.",
+            "Wir sind nicht verantwortlich für Datenverlust oder technische Probleme.",
+        ],
+        terms_section8_title: "8. Geistiges Eigentum",
+        terms_section8_content: "Alle Inhalte auf TeamUp sind unser Eigentum oder werden von uns lizenziert.",
+        terms_section9_title: "9. Kontosperrung oder -kündigung",
+        terms_section9_content: "Wir können dein Konto löschen, wenn du gegen diese Bedingungen verstößt.",
+        terms_section10_title: "10. Änderungen der Bedingungen",
+        terms_section10_content: "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu aktualisieren.",
+        terms_section11_title: "11. Anwendbares Recht",
+        terms_section11_content: "Diese Bedingungen unterliegen den Gesetzen des Landes, in dem sich unser Hauptsitz befindet.",
+        terms_section12_title: "12. Kontakt",
+        terms_section12_content: "Bei Fragen kontaktiere uns unter: support@teamup.com",
+
+        // Cookies Policy Page
+        cookies_title: "Cookie-Richtlinie",
+        cookies_intro: "Diese Richtlinie erklärt, was Cookies sind, wie wir sie bei TeamUp verwenden und welche Optionen du bezüglich ihrer Verwendung hast. Durch die Nutzung unserer Plattform akzeptierst du die Verwendung von Cookies wie in dieser Richtlinie beschrieben.",
+        cookies_section1_title: "1. Was sind Cookies?",
+        cookies_section1_content: "Cookies sind kleine Textdateien, die auf deinem Gerät gespeichert werden, wenn du eine Website besuchst. Sie ermöglichen es der Website, sich an deine Präferenzen zu erinnern und deine Browsing-Erfahrung zu verbessern.",
+        cookies_section2_title: "2. Arten von Cookies, die wir verwenden",
+        cookies_section2_content: "Wir verwenden verschiedene Arten von Cookies für verschiedene Zwecke:",
+        cookies_section2_list: [
+            "Essentielle Cookies: Notwendig für die grundlegende Funktionalität der Plattform.",
+            "Performance-Cookies: Helfen uns, die Nutzung der Plattform zu analysieren, um ihre Funktionalität zu verbessern.",
+            "Personalisierungs-Cookies: Speichern deine Präferenzen für ein maßgeschneidertes Erlebnis.",
+            "Werbe-Cookies: Verwendet, um relevante Anzeigen basierend auf deinen Interessen anzuzeigen.",
+        ],
+        cookies_section3_title: "3. Warum wir Cookies verwenden",
+        cookies_section3_content: "Wir verwenden Cookies aus mehreren wichtigen Gründen:",
+        cookies_section3_list: [
+            "Sicherstellen, dass unsere Plattform korrekt funktioniert.",
+            "Deine Präferenzen speichern und dein Erlebnis personalisieren.",
+            "Verkehr und Leistung unserer Anwendung analysieren.",
+            "Dir relevante und personalisierte Anzeigen zeigen.",
+        ],
+        cookies_section4_title: "4. Cookie-Verwaltung",
+        cookies_section4_content: "Du kannst die Verwendung von Cookies über deine Browsereinstellungen verwalten und kontrollieren.",
+        cookies_section5_title: "5. Cookies von Drittanbietern",
+        cookies_section5_content: "Einige Drittanbieter-Plattformen können auch Cookies auf unserer Website verwenden.",
+        cookies_section6_title: "6. Änderungen dieser Richtlinie",
+        cookies_section6_content: "Wir können unsere Cookie-Richtlinie jederzeit aktualisieren.",
+        cookies_section7_title: "7. Kontakt",
+        cookies_section7_content: "Wenn du Fragen zu unserer Cookie-Richtlinie hast, kontaktiere uns unter: support@teamup.com",
+
+        // Download Page
+        download_hero_title: "Lade TeamUp herunter",
+        download_hero_subtitle: "Verbinde dich mit Spielern aus der ganzen Welt",
+        download_device_title: "Wähle dein Gerät",
+        download_ios_description: "Optimiert für iPhone- und iPad-Geräte. Lade die TeamUp-App aus dem App Store herunter.",
+        download_button_ios: "Im App Store herunterladen",
+        download_exclusive_note: "Exklusiv für iOS-Geräte verfügbar",
+        download_coming_soon: "Demnächst auch für Android und Desktop verfügbar",
+        download_update_title: "Neuestes Update",
+        download_version: "Version 2.5.1",
+        download_update_features: [
+            "Verbesserte Spielersuche mit Echtzeit-Filtern",
+            "Neues interaktives Dashboard",
+            "Fehlerbehebungen und Leistungsverbesserungen"
+        ],
+        download_update_button: "Jetzt aktualisieren",
+        download_requirements_title: "Systemanforderungen",
+        download_ios_requirements_title: "iOS-Geräte",
+        download_ios_requirements: [
+            "iOS 14.0 oder höher",
+            "iPhone 8 oder neuer",
+            "iPad (6. Generation) oder neuer",
+            "250 MB freier Speicherplatz"
+        ],
+        download_faq_title: "Häufig gestellte Fragen",
+        download_faq_titles: [
+            "Ist die App kostenlos?",
+            "Wie aktualisiere ich auf die neueste Version?",
+            "Gibt es Einschränkungen für Accounts?"
+        ],
+        download_faq_contents: [
+            "Ja, TeamUp ist kostenlos herunterzuladen und zu nutzen. Es gibt jedoch Premium-Funktionen, die durch ein Abonnement entsperrt werden können.",
+            "Die App aktualisiert sich automatisch, wenn du die automatischen Updates in deinem App Store aktiviert hast. Andernfalls kannst du manuell nach Updates suchen.",
+            "Jeder Benutzer kann bis zu drei Spiele gleichzeitig verfolgen und an bis zu fünf Teams teilnehmen."
+        ],
+        download_terms_notice: "Durch Herunterladen und Installieren der App akzeptierst du unsere %terms% und %privacy%."
     }
 };
 
-let currentLanguage = "es";
+let currentLanguage = 'es'; // Default language
 
 function changeLanguage(lang) {
     if (translations[lang]) {
@@ -459,68 +531,46 @@ function changeLanguage(lang) {
 }
 
 function updateContent() {
-    console.log("Cambiando idioma a: " + currentLanguage);
-    
-    // 1. Update navigation
-    document.querySelectorAll("nav a").forEach((link) => {
-        if (link.href.includes("sobre_nosotros.html")) {
-            link.textContent = translations[currentLanguage].nav_about;
-        } else if (link.href.includes("contacto.html")) {
-            link.textContent = translations[currentLanguage].nav_contact;
-        } else if (link.href.includes("descargar.html")) {
-            link.textContent = translations[currentLanguage].nav_download;
+    const page = window.location.pathname;
+
+    // Update Nav Links
+    document.querySelectorAll('nav a').forEach(link => {
+        const key = link.getAttribute('data-lang-key');
+        if (key && translations[currentLanguage][key]) {
+            link.textContent = translations[currentLanguage][key];
         }
     });
 
-    // 2. Update breadcrumb
-    const breadcrumbSpan = document.querySelector(".breadcrumb span");
-    if (breadcrumbSpan) {
-        const currentUrl = window.location.href.toLowerCase();
-        
-        if (currentUrl.includes("contacto.html")) {
-            breadcrumbSpan.textContent = translations[currentLanguage].contact;
-        } else if (currentUrl.includes("sobre_nosotros.html")) {
-            breadcrumbSpan.textContent = translations[currentLanguage].about;
-        } else if (currentUrl.includes("descargar.html")) {
-            breadcrumbSpan.textContent = translations[currentLanguage].download;
-        } else if (currentUrl.includes("p_privacidad.html")) {
-            breadcrumbSpan.textContent = translations[currentLanguage].privacy;
-        } else if (currentUrl.includes("terminos_uso.html")) {
-            breadcrumbSpan.textContent = translations[currentLanguage].terms;
-        } else if (currentUrl.includes("cookies.html")) {
-            breadcrumbSpan.textContent = translations[currentLanguage].cookies;
-        } else if (currentUrl.includes("saber_mas.html")) {
-            breadcrumbSpan.textContent = translations[currentLanguage].learn_more;
+    // Update Breadcrumbs
+    document.querySelectorAll('.breadcrumb a, .breadcrumb span').forEach(element => {
+        const key = element.getAttribute('data-lang-key');
+        if (key && translations[currentLanguage][key]) {
+            element.textContent = translations[currentLanguage][key];
         }
+    });
+
+    // Update specific pages based on URL
+    if (page.includes('contacto.html')) {
+        updateContactPage();
+    } else if (page.includes('sobre_nosotros.html')) {
+        updateAboutPage();
+    } else if (page.includes('descargar.html')) {
+        updateDownloadPage();
+    } else if (page.includes('terminos_uso.html')) {
+        updateTermsPage();
+    } else if (page.includes('p_privacidad.html')) {
+        updatePrivacyPage();
+    } else if (page.includes('cookies.html')) {
+        updateCookiesPage();
+    } else if (page.includes('index.html') || page === '/' || page === '/src/' || page === '/src/index.html') {
+        updateIndexPage();
     }
 
-    // 3. Update contact form if it exists
-    updateContactForm();
-    
-    // 4. Update footer
+    // Update Footer
     updateFooter();
-    
-    // 5. Update page content based on URL
-    const currentUrl = window.location.href.toLowerCase();
-    
-    if (currentUrl.includes("p_privacidad.html")) {
-        updatePrivacyPage();
-    } else if (currentUrl.includes("terminos_uso.html")) {
-        updateTermsPage();
-    } else if (currentUrl.includes("cookies.html")) {
-        updateCookiesPage();
-    } else if (currentUrl.includes("sobre_nosotros.html")) {
-        updateAboutPage();
-    } else if (currentUrl.includes("contacto.html")) {
-        updateContactPage();
-    } else if (currentUrl.includes("descargar.html")) {
-        updateDownloadPage();
-    } else if (currentUrl.includes("index.html") || currentUrl.endsWith("/") || currentUrl.endsWith("g11billgates/")) {
-        // Index page or root URL
-        updateIndexPage();
-    } else if (currentUrl.includes("saber_mas.html")) {
-        updateLearnMorePage();
-    }
+
+    // Update Language Button
+    updateLanguageButton();
 }
 
 function updateAboutPage() {
@@ -705,16 +755,27 @@ function updateSection(section, prefix, sectionNum) {
     }
 }
 
-function updateLanguageButton(lang) {
-    const button = document.querySelector(".language-switcher button");
-    if (button) {
-        if (lang === "es") {
-            button.textContent = "🌍 Español ▼";
-        } else if (lang === "en") {
-            button.textContent = "🌍 English ▼";
-        } else if (lang === "de") {
-            button.textContent = "🌍 Deutsch ▼";
-        }
+function updateLanguageButton() {
+    const languageSwitcher = document.querySelector('.language-switcher');
+    if (!languageSwitcher) return;
+    
+    const button = languageSwitcher.querySelector('button');
+    if (!button) return;
+    
+    if (currentLanguage === 'es') {
+        button.innerHTML = '🌍 Español ▼';
+        button.setAttribute('data-lang', 'en');
+    } else if (currentLanguage === 'en') {
+        button.innerHTML = '🌍 English ▼';
+        button.setAttribute('data-lang', 'de');
+    } else if (currentLanguage === 'de') {
+        button.innerHTML = '🌍 Deutsch ▼';
+        button.setAttribute('data-lang', 'es');
+    }
+    
+    // Set ID for the button if it doesn't have one
+    if (!button.id) {
+        button.id = 'langButton';
     }
 }
 
@@ -1314,23 +1375,20 @@ function updateLearnMorePage() {
     }
 }
 
-// Initialize language from localStorage or default to Spanish
-document.addEventListener("DOMContentLoaded", () => {
-    const savedLanguage = localStorage.getItem("preferredLanguage") || "es";
-    changeLanguage(savedLanguage);
-
-    // Add click events to language options
-    document.querySelectorAll(".language-switcher li").forEach((li) => {
-        li.addEventListener("click", () => {
-            let lang;
-            if (li.textContent.includes("English")) {
-                lang = "en";
-            } else if (li.textContent.includes("Español")) {
-                lang = "es";
-            } else if (li.textContent.includes("Deutsch")) {
-                lang = "de";
+// Event Listener for Language Change
+document.addEventListener('DOMContentLoaded', () => {
+    const langButton = document.getElementById('langButton');
+    
+    if (langButton) {
+        langButton.addEventListener('click', () => {
+            const nextLang = langButton.getAttribute('data-lang');
+            if (nextLang) {
+                currentLanguage = nextLang;
+                updateContent();
             }
-            changeLanguage(lang);
         });
-    });
+    }
+    
+    // Initialize with default language
+    updateContent();
 });
