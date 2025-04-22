@@ -347,6 +347,67 @@ const translations = {
         about_join_content: "Werde Teil einer Gemeinschaft von Gamern, die deine Leidenschaft teilen. TeamUp wurde entwickelt, um dir zu helfen, das Beste aus deinen Matches herauszuholen und dein Spielerlebnis zu verbessern.",
         about_cta: "Verbinde dich, spiele und steige mit TeamUp auf die nächste Stufe!",
 
+        // Contact Form
+        contact_title: "Kontakt",
+        name_label: "Name",
+        email_label: "E-Mail",
+        subject_label: "Betreff",
+        message_label: "Nachricht",
+        privacy_checkbox: "Ich akzeptiere die",
+        privacy_link: "Datenschutzrichtlinie",
+        send_button: "SENDEN",
+
+        // Form Messages
+        fill_fields: "Bitte fülle alle Felder aus.",
+        valid_email: "Bitte gib eine gültige E-Mail-Adresse ein.",
+        accept_privacy: "Du musst die Datenschutzrichtlinie akzeptieren.",
+        message_sent: "Nachricht erfolgreich gesendet.",
+        message_error: "Fehler beim Senden der Nachricht. Bitte versuche es erneut.",
+
+        // Download Page
+        download_hero_title: "LADE TEAMUP HERUNTER UND STARTE NOCH HEUTE",
+        download_hero_subtitle: "Verbinde dich mit Spielern, organisiere Matches und finde perfekte Teamkollegen",
+        download_device_title: "HERUNTERLADEN FÜR DEIN GERÄT",
+        download_ios_description: "Verfügbar für iPhone und iPad mit iOS 14 oder höher",
+        download_button_ios: "FÜR iOS HERUNTERLADEN",
+        download_exclusive_note: "Exklusiv für Apple-Geräte",
+        download_coming_soon: "Demnächst für andere Plattformen verfügbar",
+        download_update_title: "AKTUALISIERE AUF DIE NEUESTE VERSION",
+        download_version: "Version 2.5.1",
+        download_update_features: [
+            "Neues verbessertes Matchmaking-System",
+            "Erneuerte und intuitivere Benutzeroberfläche",
+            "Unterstützung für neue beliebte Spiele",
+            "Fehlerbehebungen und Leistungsverbesserungen"
+        ],
+        download_update_button: "JETZT AKTUALISIEREN",
+        download_requirements_title: "SYSTEMANFORDERUNGEN",
+        download_ios_requirements_title: "Anforderungen für iOS",
+        download_ios_requirements: [
+            "iOS 14.0 oder höher",
+            "iPhone 8 oder höher",
+            "iPad 6. Generation oder höher",
+            "500 MB freier Speicherplatz",
+            "Internetverbindung",
+            "Apple ID-Konto"
+        ],
+        download_faq_title: "HÄUFIG GESTELLTE FRAGEN",
+        download_faq_titles: [
+            "Wie installiere ich TeamUp auf meinem iPhone oder iPad?",
+            "Ist es mit allen iOS-Geräten kompatibel?",
+            "Ist die TeamUp-App kostenlos für iOS?",
+            "Wie aktualisiere ich auf die neueste Version unter iOS?",
+            "Wann wird es für Android und PC verfügbar sein?"
+        ],
+        download_faq_contents: [
+            "Lade einfach die App von dieser Seite oder aus dem App Store herunter, öffne die heruntergeladene Datei und folge den Installationsanweisungen auf dem Bildschirm.",
+            "TeamUp ist mit iPhone 8 oder höher und iPad 6. Generation oder höher kompatibel, solange iOS 14.0 oder eine neuere Version installiert ist.",
+            "Ja, TeamUp ist für iOS-Geräte völlig kostenlos. Wir bieten optionale Premium-Funktionen über ein Abonnement an, aber alle Grundfunktionen sind kostenlos.",
+            "Die App benachrichtigt dich, wenn ein Update verfügbar ist. Du kannst auch manuell im App Store nach Updates suchen oder die neueste Version von dieser Seite herunterladen.",
+            "Wir arbeiten an Versionen für Android und PC/Mac. Abonniere unseren Newsletter, um benachrichtigt zu werden, wenn sie verfügbar sind."
+        ],
+        download_terms_notice: "Durch das Herunterladen von TeamUp akzeptierst du unsere %terms% und unsere %privacy%.",
+
         // Index Page
         index_hero_connect: "Verbinde dich mit Spielern wie dir.",
         index_hero_organize: "Organisiere Spiele. Bilde Teams.",
@@ -701,16 +762,12 @@ function updateDownloadPage() {
     if (heroSection) {
         const h1 = heroSection.querySelector("h1");
         if (h1) {
-            h1.textContent = currentLanguage === "es" 
-                ? "DESCARGA TEAMUP Y EMPIEZA A JUGAR HOY" 
-                : "DOWNLOAD TEAMUP AND START PLAYING TODAY";
+            h1.textContent = translations[currentLanguage].download_hero_title;
         }
         
         const subtitle = heroSection.querySelector(".hero-subtitle");
         if (subtitle) {
-            subtitle.textContent = currentLanguage === "es"
-                ? "Conecta con jugadores, organiza partidas y encuentra compañeros perfectos"
-                : "Connect with players, organize matches and find perfect teammates";
+            subtitle.textContent = translations[currentLanguage].download_hero_subtitle;
         }
     }
     
@@ -719,9 +776,7 @@ function updateDownloadPage() {
     if (downloadOptions) {
         const h2 = downloadOptions.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es"
-                ? "DESCARGA PARA TU DISPOSITIVO"
-                : "DOWNLOAD FOR YOUR DEVICE";
+            h2.textContent = translations[currentLanguage].download_device_title;
         }
         
         const h3 = downloadOptions.querySelector(".download-card h3");
@@ -731,30 +786,22 @@ function updateDownloadPage() {
         
         const p = downloadOptions.querySelector(".download-card p:not(.exclusive-note)");
         if (p) {
-            p.textContent = currentLanguage === "es"
-                ? "Disponible para iPhone y iPad con iOS 14 o superior"
-                : "Available for iPhone and iPad with iOS 14 or higher";
+            p.textContent = translations[currentLanguage].download_ios_description;
         }
         
         const downloadBtn = downloadOptions.querySelector(".download-btn");
         if (downloadBtn) {
-            downloadBtn.textContent = currentLanguage === "es"
-                ? "DESCARGAR PARA iOS"
-                : "DOWNLOAD FOR iOS";
+            downloadBtn.textContent = translations[currentLanguage].download_button_ios;
         }
         
         const exclusiveNote = downloadOptions.querySelector(".exclusive-note");
         if (exclusiveNote) {
-            exclusiveNote.textContent = currentLanguage === "es"
-                ? "Exclusivo para dispositivos Apple"
-                : "Exclusive for Apple devices";
+            exclusiveNote.textContent = translations[currentLanguage].download_exclusive_note;
         }
         
         const comingSoon = downloadOptions.querySelector(".coming-soon p");
         if (comingSoon) {
-            comingSoon.textContent = currentLanguage === "es"
-                ? "Próximamente disponible para otras plataformas"
-                : "Coming soon for other platforms";
+            comingSoon.textContent = translations[currentLanguage].download_coming_soon;
         }
     }
     
@@ -763,44 +810,28 @@ function updateDownloadPage() {
     if (updateSection) {
         const h2 = updateSection.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es"
-                ? "ACTUALIZA A LA ÚLTIMA VERSIÓN"
-                : "UPDATE TO THE LATEST VERSION";
+            h2.textContent = translations[currentLanguage].download_update_title;
         }
         
         const h3 = updateSection.querySelector(".update-info h3");
         if (h3) {
-            h3.textContent = currentLanguage === "es"
-                ? "Versión 2.5.1"
-                : "Version 2.5.1";
+            h3.textContent = translations[currentLanguage].download_version;
         }
         
         const features = updateSection.querySelectorAll(".update-features li");
         if (features.length > 0) {
-            const featuresEs = [
-                "Nuevo sistema de matchmaking mejorado",
-                "Interfaz renovada y más intuitiva",
-                "Soporte para nuevos juegos populares",
-                "Corrección de errores y mejoras de rendimiento"
-            ];
-            
-            const featuresEn = [
-                "New improved matchmaking system",
-                "Renewed and more intuitive interface",
-                "Support for new popular games",
-                "Bug fixes and performance improvements"
-            ];
+            const featuresTranslations = translations[currentLanguage].download_update_features;
             
             features.forEach((li, index) => {
-                li.textContent = currentLanguage === "es" ? featuresEs[index] : featuresEn[index];
+                if (index < featuresTranslations.length) {
+                    li.textContent = featuresTranslations[index];
+                }
             });
         }
         
         const updateBtn = updateSection.querySelector(".update-btn");
         if (updateBtn) {
-            updateBtn.textContent = currentLanguage === "es"
-                ? "ACTUALIZAR AHORA"
-                : "UPDATE NOW";
+            updateBtn.textContent = translations[currentLanguage].download_update_button;
         }
     }
     
@@ -809,40 +840,22 @@ function updateDownloadPage() {
     if (requirementsSection) {
         const h2 = requirementsSection.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es"
-                ? "REQUISITOS DEL SISTEMA"
-                : "SYSTEM REQUIREMENTS";
+            h2.textContent = translations[currentLanguage].download_requirements_title;
         }
         
         const h3 = requirementsSection.querySelector(".req-card h3");
         if (h3) {
-            h3.textContent = currentLanguage === "es"
-                ? "Requisitos para iOS"
-                : "Requirements for iOS";
+            h3.textContent = translations[currentLanguage].download_ios_requirements_title;
         }
         
         const requirements = requirementsSection.querySelectorAll(".req-card li");
         if (requirements.length > 0) {
-            const requirementsEs = [
-                "iOS 14.0 o superior",
-                "iPhone 8 o superior",
-                "iPad de 6ª generación o superior",
-                "500 MB de espacio libre",
-                "Conexión a Internet",
-                "Cuenta de Apple ID"
-            ];
-            
-            const requirementsEn = [
-                "iOS 14.0 or higher",
-                "iPhone 8 or higher",
-                "iPad 6th generation or higher",
-                "500 MB of free space",
-                "Internet connection",
-                "Apple ID account"
-            ];
+            const requirementsTranslations = translations[currentLanguage].download_ios_requirements;
             
             requirements.forEach((li, index) => {
-                li.textContent = currentLanguage === "es" ? requirementsEs[index] : requirementsEn[index];
+                if (index < requirementsTranslations.length) {
+                    li.textContent = requirementsTranslations[index];
+                }
             });
         }
     }
@@ -852,52 +865,25 @@ function updateDownloadPage() {
     if (faqSection) {
         const h2 = faqSection.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es"
-                ? "PREGUNTAS FRECUENTES"
-                : "FREQUENTLY ASKED QUESTIONS";
+            h2.textContent = translations[currentLanguage].download_faq_title;
         }
         
         const faqItems = faqSection.querySelectorAll(".faq-item");
         if (faqItems.length > 0) {
-            const faqTitlesEs = [
-                "¿Cómo instalo TeamUp en mi iPhone o iPad?",
-                "¿Es compatible con todos los dispositivos iOS?",
-                "¿Es gratuita la aplicación TeamUp para iOS?",
-                "¿Cómo actualizo a la última versión en iOS?",
-                "¿Cuándo estará disponible para Android y PC?"
-            ];
-            
-            const faqContentsEs = [
-                "Simplemente descarga la aplicación desde esta página o desde la App Store, abre el archivo descargado y sigue las instrucciones de instalación en pantalla.",
-                "TeamUp es compatible con iPhone 8 o superior y iPad de 6ª generación o superior, siempre que tengan iOS 14.0 o una versión más reciente instalada.",
-                "Sí, TeamUp es completamente gratuita para dispositivos iOS. Ofrecemos funciones premium opcionales mediante suscripción, pero todas las funciones básicas son gratuitas.",
-                "La aplicación te notificará cuando haya una actualización disponible. También puedes verificar actualizaciones manualmente en la App Store o descargar la última versión desde esta página.",
-                "Estamos trabajando en las versiones para Android y PC/Mac. Suscríbete a nuestro boletín para recibir notificaciones cuando estén disponibles."
-            ];
-            
-            const faqTitlesEn = [
-                "How do I install TeamUp on my iPhone or iPad?",
-                "Is it compatible with all iOS devices?",
-                "Is the TeamUp app free for iOS?",
-                "How do I update to the latest version on iOS?",
-                "When will it be available for Android and PC?"
-            ];
-            
-            const faqContentsEn = [
-                "Simply download the app from this page or from the App Store, open the downloaded file and follow the on-screen installation instructions.",
-                "TeamUp is compatible with iPhone 8 or higher and iPad 6th generation or higher, as long as they have iOS 14.0 or a more recent version installed.",
-                "Yes, TeamUp is completely free for iOS devices. We offer optional premium features through subscription, but all basic features are free.",
-                "The app will notify you when an update is available. You can also check for updates manually in the App Store or download the latest version from this page.",
-                "We are working on versions for Android and PC/Mac. Subscribe to our newsletter to receive notifications when they are available."
-            ];
+            const faqTitlesTranslations = translations[currentLanguage].download_faq_titles;
+            const faqContentsTranslations = translations[currentLanguage].download_faq_contents;
             
             faqItems.forEach((item, index) => {
                 const h3 = item.querySelector("h3");
                 const p = item.querySelector("p");
                 
                 if (h3 && p) {
-                    h3.textContent = currentLanguage === "es" ? faqTitlesEs[index] : faqTitlesEn[index];
-                    p.textContent = currentLanguage === "es" ? faqContentsEs[index] : faqContentsEn[index];
+                    if (index < faqTitlesTranslations.length) {
+                        h3.textContent = faqTitlesTranslations[index];
+                    }
+                    if (index < faqContentsTranslations.length) {
+                        p.textContent = faqContentsTranslations[index];
+                    }
                 }
             });
         }
@@ -906,16 +892,14 @@ function updateDownloadPage() {
     // Update terms notice
     const termsNotice = document.querySelector(".terms-notice p");
     if (termsNotice) {
-        // Preserve the links
-        const links = termsNotice.querySelectorAll("a");
-        const termsLink = links[0];
-        const privacyLink = links[1];
+        // Get the translated text with placeholders
+        let noticeText = translations[currentLanguage].download_terms_notice;
         
-        if (termsLink && privacyLink) {
-            termsNotice.innerHTML = currentLanguage === "es"
-                ? `Al descargar TeamUp, aceptas nuestros <a href="terminos_uso.html">Términos de Uso</a> y nuestra <a href="p_privacidad.html">Política de Privacidad</a>.`
-                : `By downloading TeamUp, you accept our <a href="terminos_uso.html">Terms of Use</a> and our <a href="p_privacidad.html">Privacy Policy</a>.`;
-        }
+        // Replace placeholders with actual links
+        noticeText = noticeText.replace("%terms%", `<a href="terminos_uso.html">${translations[currentLanguage].terms}</a>`);
+        noticeText = noticeText.replace("%privacy%", `<a href="p_privacidad.html">${translations[currentLanguage].privacy}</a>`);
+        
+        termsNotice.innerHTML = noticeText;
     }
 }
 
