@@ -322,6 +322,58 @@ const translations = {
         cookies_section7_title: "7. Contacto",
         cookies_section7_content: "Si tienes dudas sobre nuestra Política de Cookies, contáctanos en: soporte@teamup.com",
     },
+    de: {
+        // Header
+        nav_about: "Über Uns",
+        nav_contact: "Kontakt",
+        nav_download: "Herunterladen",
+
+        // Breadcrumb
+        home: "Home",
+        contact: "Kontakt",
+        about: "Über Uns",
+        download: "Herunterladen",
+        privacy: "Datenschutzrichtlinie",
+        terms: "Nutzungsbedingungen",
+        cookies: "Cookie-Richtlinie",
+        learn_more: "Mehr erfahren",
+
+        // Index Page
+        index_hero_connect: "Verbinde dich mit Spielern wie dir.",
+        index_hero_organize: "Organisiere Spiele. Bilde Teams.",
+        index_hero_all: "Alles an einem Ort.",
+        index_get_teamup: "TeamUp holen",
+        
+        // Features
+        index_solo_gaming_title: "Solo Gaming",
+        index_solo_gaming_text: "Finde Leute, teile Fähigkeiten, bilde Teams und gewinne.",
+        index_download_now: "Jetzt herunterladen",
+        
+        index_new_here_title: "Neu hier?",
+        index_new_here_text: "Entdecke wie es funktioniert",
+        index_learn_more: "Mehr erfahren",
+        
+        index_friends_title: "Freunde",
+        index_friends_text: "Finde neue Freunde zum Spielen oder einfach zum Chatten über dein Lieblingsspiel.",
+        
+        index_growth_title: "Kontinuierliches Wachstum",
+        index_growth_text: "Werde Teil einer aktiven Community mit tausenden von Gamern.",
+        
+        index_match_title: "Sofortiges Match",
+        index_match_text: "Finde passende Spieler und beginne, Spiele zu planen.",
+        
+        // CTA Section
+        index_cta_title: "Es ist Zeit, Gaming in den Mittelpunkt zu stellen",
+        index_cta_text: "Verabschiede dich von #solo-gaming, #toxizität und der #erfolglosen-suche nach #kompatiblen-spielern.",
+
+        // Footer
+        footer_download: "Herunterladen",
+        footer_legal: "Rechtliches",
+        footer_terms: "Nutzungsbedingungen",
+        footer_privacy: "Datenschutzrichtlinie",
+        footer_cookies: "Cookie-Richtlinie",
+        copyright: "TeamUp ©2025 Alle Rechte vorbehalten",
+    }
 };
 
 let currentLanguage = "es";
@@ -586,7 +638,13 @@ function updateSection(section, prefix, sectionNum) {
 function updateLanguageButton(lang) {
     const button = document.querySelector(".language-switcher button");
     if (button) {
-        button.textContent = lang === "es" ? "🌍 Español ▼" : "🌍 English ▼";
+        if (lang === "es") {
+            button.textContent = "🌍 Español ▼";
+        } else if (lang === "en") {
+            button.textContent = "🌍 English ▼";
+        } else if (lang === "de") {
+            button.textContent = "🌍 Deutsch ▼";
+        }
     }
 }
 
@@ -868,7 +926,7 @@ function updateIndexPage() {
                     <br />
                     Todo en un solo lugar.
                 `;
-            } else {
+            } else if (currentLanguage === "en") {
                 h1.innerHTML = `
                     Connect with players like you.
                     <br />
@@ -876,12 +934,26 @@ function updateIndexPage() {
                     <br />
                     All in one place.
                 `;
+            } else if (currentLanguage === "de") {
+                h1.innerHTML = `
+                    ${translations.de.index_hero_connect}
+                    <br />
+                    ${translations.de.index_hero_organize}
+                    <br />
+                    ${translations.de.index_hero_all}
+                `;
             }
         }
         
         const ctaButton = heroSection.querySelector(".cta-button");
         if (ctaButton) {
-            ctaButton.textContent = currentLanguage === "es" ? "Obtener TeamUp" : "Get TeamUp";
+            if (currentLanguage === "es") {
+                ctaButton.textContent = "Obtener TeamUp";
+            } else if (currentLanguage === "en") {
+                ctaButton.textContent = "Get TeamUp";
+            } else if (currentLanguage === "de") {
+                ctaButton.textContent = translations.de.index_get_teamup;
+            }
         }
     }
     
@@ -889,18 +961,36 @@ function updateIndexPage() {
     const soloGaming = document.querySelector("#feature-solo-gaming");
     if (soloGaming) {
         const h2 = soloGaming.querySelector("h2");
-        if (h2) h2.textContent = "Solo gaming";
+        if (h2) {
+            if (currentLanguage === "es") {
+                h2.textContent = "Solo gaming";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "Solo gaming";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.index_solo_gaming_title;
+            }
+        }
         
         const p = soloGaming.querySelector("p");
         if (p) {
-            p.textContent = currentLanguage === "es" 
-                ? "Encuentra gente, comparte habilidades, haz equipos y gana."
-                : "Find people, share skills, make teams and win.";
+            if (currentLanguage === "es") {
+                p.textContent = "Encuentra gente, comparte habilidades, haz equipos y gana.";
+            } else if (currentLanguage === "en") {
+                p.textContent = "Find people, share skills, make teams and win.";
+            } else if (currentLanguage === "de") {
+                p.textContent = translations.de.index_solo_gaming_text;
+            }
         }
         
         const button = soloGaming.querySelector("button");
         if (button) {
-            button.textContent = currentLanguage === "es" ? "Descargar ahora" : "Download now";
+            if (currentLanguage === "es") {
+                button.textContent = "Descargar ahora";
+            } else if (currentLanguage === "en") {
+                button.textContent = "Download now";
+            } else if (currentLanguage === "de") {
+                button.textContent = translations.de.index_download_now;
+            }
         }
     }
     
@@ -908,19 +998,35 @@ function updateIndexPage() {
     if (nuevoAqui) {
         const h2 = nuevoAqui.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" ? "¿Nuevo aquí?" : "New here?";
+            if (currentLanguage === "es") {
+                h2.textContent = "¿Nuevo aquí?";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "New here?";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.index_new_here_title;
+            }
         }
         
         const p = nuevoAqui.querySelector("p");
         if (p) {
-            p.textContent = currentLanguage === "es" 
-                ? "Descubre cómo funciona" 
-                : "Discover how it works";
+            if (currentLanguage === "es") {
+                p.textContent = "Descubre cómo funciona";
+            } else if (currentLanguage === "en") {
+                p.textContent = "Discover how it works";
+            } else if (currentLanguage === "de") {
+                p.textContent = translations.de.index_new_here_text;
+            }
         }
         
         const btn = nuevoAqui.querySelector(".btn");
         if (btn) {
-            btn.textContent = currentLanguage === "es" ? "Saber más" : "Learn more";
+            if (currentLanguage === "es") {
+                btn.textContent = "Saber más";
+            } else if (currentLanguage === "en") {
+                btn.textContent = "Learn more";
+            } else if (currentLanguage === "de") {
+                btn.textContent = translations.de.index_learn_more;
+            }
         }
     }
     
@@ -928,14 +1034,24 @@ function updateIndexPage() {
     if (amigos) {
         const h2 = amigos.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" ? "Amigos" : "Friends";
+            if (currentLanguage === "es") {
+                h2.textContent = "Amigos";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "Friends";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.index_friends_title;
+            }
         }
         
         const p = amigos.querySelector("p");
         if (p) {
-            p.textContent = currentLanguage === "es" 
-                ? "Encuentra nuevos amigos para jugar o simplemente chatear sobre tu juego favorito."
-                : "Find new friends to play with or just chat about your favorite game.";
+            if (currentLanguage === "es") {
+                p.textContent = "Encuentra nuevos amigos para jugar o simplemente chatear sobre tu juego favorito.";
+            } else if (currentLanguage === "en") {
+                p.textContent = "Find new friends to play with or just chat about your favorite game.";
+            } else if (currentLanguage === "de") {
+                p.textContent = translations.de.index_friends_text;
+            }
         }
     }
     
@@ -943,14 +1059,24 @@ function updateIndexPage() {
     if (crecimiento) {
         const h2 = crecimiento.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" ? "Crecimiento continuo" : "Continuous growth";
+            if (currentLanguage === "es") {
+                h2.textContent = "Crecimiento continuo";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "Continuous growth";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.index_growth_title;
+            }
         }
         
         const p = crecimiento.querySelector("p");
         if (p) {
-            p.textContent = currentLanguage === "es" 
-                ? "Únete a una comunidad activa con miles de gamers."
-                : "Join an active community with thousands of gamers.";
+            if (currentLanguage === "es") {
+                p.textContent = "Únete a una comunidad activa con miles de gamers.";
+            } else if (currentLanguage === "en") {
+                p.textContent = "Join an active community with thousands of gamers.";
+            } else if (currentLanguage === "de") {
+                p.textContent = translations.de.index_growth_text;
+            }
         }
     }
     
@@ -958,14 +1084,24 @@ function updateIndexPage() {
     if (match) {
         const h2 = match.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" ? "Match instantáneo" : "Instant match";
+            if (currentLanguage === "es") {
+                h2.textContent = "Match instantáneo";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "Instant match";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.index_match_title;
+            }
         }
         
         const p = match.querySelector("p");
         if (p) {
-            p.textContent = currentLanguage === "es" 
-                ? "Haz match con jugadores compatibles y comienza a planear partidas."
-                : "Match with compatible players and start planning games.";
+            if (currentLanguage === "es") {
+                p.textContent = "Haz match con jugadores compatibles y comienza a planear partidas.";
+            } else if (currentLanguage === "en") {
+                p.textContent = "Match with compatible players and start planning games.";
+            } else if (currentLanguage === "de") {
+                p.textContent = translations.de.index_match_text;
+            }
         }
     }
     
@@ -974,21 +1110,35 @@ function updateIndexPage() {
     if (ctaSection) {
         const h2 = ctaSection.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" 
-                ? "Es hora de poner el gaming en el centro" 
-                : "It's time to put gaming at the center";
+            if (currentLanguage === "es") {
+                h2.textContent = "Es hora de poner el gaming en el centro";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "It's time to put gaming at the center";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.index_cta_title;
+            }
         }
         
         const p = ctaSection.querySelector(".cta-text");
         if (p) {
-            p.textContent = currentLanguage === "es" 
-                ? "Di adiós a #partidas-solitarías, #toxicity, y #buscar-sin-éxito #jugadores-compatibles."
-                : "Say goodbye to #solo-gaming, #toxicity, and #unsuccessful-search for #compatible-players.";
+            if (currentLanguage === "es") {
+                p.textContent = "Di adiós a #partidas-solitarías, #toxicity, y #buscar-sin-éxito #jugadores-compatibles.";
+            } else if (currentLanguage === "en") {
+                p.textContent = "Say goodbye to #solo-gaming, #toxicity, and #unsuccessful-search for #compatible-players.";
+            } else if (currentLanguage === "de") {
+                p.textContent = translations.de.index_cta_text;
+            }
         }
         
         const button = ctaSection.querySelector(".cta-button");
         if (button) {
-            button.textContent = currentLanguage === "es" ? "Descargar ahora" : "Download now";
+            if (currentLanguage === "es") {
+                button.textContent = "Descargar ahora";
+            } else if (currentLanguage === "en") {
+                button.textContent = "Download now";
+            } else if (currentLanguage === "de") {
+                button.textContent = translations.de.index_download_now;
+            }
         }
     }
 }
@@ -1179,7 +1329,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add click events to language options
     document.querySelectorAll(".language-switcher li").forEach((li) => {
         li.addEventListener("click", () => {
-            const lang = li.textContent.includes("English") ? "en" : "es";
+            let lang;
+            if (li.textContent.includes("English")) {
+                lang = "en";
+            } else if (li.textContent.includes("Español")) {
+                lang = "es";
+            } else if (li.textContent.includes("Deutsch")) {
+                lang = "de";
+            }
             changeLanguage(lang);
         });
     });
