@@ -443,6 +443,48 @@ const translations = {
         footer_privacy: "Datenschutzrichtlinie",
         footer_cookies: "Cookie-Richtlinie",
         copyright: "TeamUp ©2025 Alle Rechte vorbehalten",
+
+        // Terms of Use Page
+        terms_title: "Nutzungsbedingungen",
+        terms_intro:
+            "Durch den Zugriff und die Nutzung von TeamUp erklärst du dich mit diesen Nutzungsbedingungen einverstanden.",
+        terms_section1_title: "1. Annahme der Bedingungen",
+        terms_section1_content: "Durch den Zugriff oder die Nutzung der TeamUp-Plattform stimmst du zu, diese Nutzungsbedingungen einzuhalten.",
+        terms_section2_title: "2. Beschreibung des Dienstes",
+        terms_section2_content: "TeamUp ist eine Plattform zur Verbindung von Spielern und zur Organisation von Spielen. Die Nutzung ist persönlich und nicht kommerziell.",
+        terms_section3_title: "3. Teilnahmevoraussetzungen",
+        terms_section3_content: "Du musst mindestens 18 Jahre alt sein oder das gesetzliche Mindestalter in deinem Land haben.",
+        terms_section4_title: "4. Kontoregistrierung und Sicherheit",
+        terms_section4_content: "Du bist für die Aufrechterhaltung der Sicherheit deines Kontos verantwortlich.",
+        terms_section4_list: [
+            "Du bist für die Sicherheit deiner Anmeldedaten verantwortlich.",
+            "Teile dein Konto nicht und nutze es nicht für illegale Zwecke.",
+        ],
+        terms_section5_title: "5. Nutzerverhalten",
+        terms_section5_content: "Du stimmst zu, Folgendes nicht zu tun:",
+        terms_section5_list: [
+            "Nutze die Plattform nur für legitime Zwecke.",
+            "Respektiere andere Nutzer und vermeide toxisches Verhalten.",
+            "Veröffentliche keine beleidigenden oder illegalen Inhalte.",
+        ],
+        terms_section6_title: "6. Nutzergenerierte Inhalte",
+        terms_section6_content: "Durch das Hochladen von Inhalten gewährst du TeamUp eine weltweite Lizenz, diese anzuzeigen und zu verändern.",
+        terms_section7_title: "7. Haftungsbeschränkung",
+        terms_section7_content: "TeamUp ist für bestimmte Aspekte nicht verantwortlich:",
+        terms_section7_list: [
+            "TeamUp garantiert nicht, dass der Dienst fehlerfrei ist.",
+            "Wir sind nicht verantwortlich für Datenverlust oder technische Probleme.",
+        ],
+        terms_section8_title: "8. Geistiges Eigentum",
+        terms_section8_content: "Alle Inhalte auf TeamUp sind unser Eigentum oder lizenziert.",
+        terms_section9_title: "9. Kontosperrung oder -kündigung",
+        terms_section9_content: "Wir können dein Konto löschen, wenn du gegen diese Bedingungen verstößt.",
+        terms_section10_title: "10. Änderungen der Bedingungen",
+        terms_section10_content: "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu aktualisieren.",
+        terms_section11_title: "11. Anwendbares Recht",
+        terms_section11_content: "Diese Bedingungen unterliegen den Gesetzen des Landes, in dem sich unser Hauptsitz befindet.",
+        terms_section12_title: "12. Kontakt",
+        terms_section12_content: "Bei Fragen kontaktiere uns unter: support@teamup.com",
     }
 };
 
