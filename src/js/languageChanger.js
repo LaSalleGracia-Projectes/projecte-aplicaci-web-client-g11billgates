@@ -402,10 +402,15 @@ function updateContent() {
         }
     });
 
+    // Determine current page by pathname or filename
+    const currentPath = window.location.pathname;
+    const currentHref = window.location.href;
+
     // Update privacy policy page content
-    if (window.location.pathname.includes("p_privacidad.html")) {
-        document.querySelector("h1").textContent =
-            translations[currentLanguage].privacy_title;
+    if (currentPath.includes("p_privacidad.html") || currentHref.includes("p_privacidad.html")) {
+        console.log("Updating privacy policy content");
+        document.querySelector("h1").textContent = translations[currentLanguage].privacy_title;
+        
         const privacyIntro = document.querySelector(".privacy-intro");
         if (privacyIntro) {
             privacyIntro.textContent = translations[currentLanguage].privacy_intro;
@@ -420,8 +425,10 @@ function updateContent() {
             const listKey = `privacy_section${sectionNum}_list`;
 
             if (translations[currentLanguage][titleKey]) {
-                section.querySelector("h2").textContent =
-                    translations[currentLanguage][titleKey];
+                const h2 = section.querySelector("h2");
+                if (h2) {
+                    h2.textContent = translations[currentLanguage][titleKey];
+                }
             }
             if (translations[currentLanguage][contentKey]) {
                 const p = section.querySelector("p");
@@ -444,9 +451,10 @@ function updateContent() {
     }
 
     // Update terms of use page content
-    if (window.location.pathname.includes("terminos_uso.html")) {
-        document.querySelector("h1").textContent =
-            translations[currentLanguage].terms_title;
+    if (currentPath.includes("terminos_uso.html") || currentHref.includes("terminos_uso.html")) {
+        console.log("Updating terms of use content");
+        document.querySelector("h1").textContent = translations[currentLanguage].terms_title;
+        
         const termsIntro = document.querySelector(".terms-intro");
         if (termsIntro) {
             termsIntro.textContent = translations[currentLanguage].terms_intro;
@@ -461,8 +469,10 @@ function updateContent() {
             const listKey = `terms_section${sectionNum}_list`;
 
             if (translations[currentLanguage][titleKey]) {
-                section.querySelector("h2").textContent =
-                    translations[currentLanguage][titleKey];
+                const h2 = section.querySelector("h2");
+                if (h2) {
+                    h2.textContent = translations[currentLanguage][titleKey];
+                }
             }
             if (translations[currentLanguage][contentKey]) {
                 const p = section.querySelector("p");
@@ -485,9 +495,10 @@ function updateContent() {
     }
 
     // Update cookies policy page content
-    if (window.location.pathname.includes("cookies.html")) {
-        document.querySelector("h1").textContent =
-            translations[currentLanguage].cookies_title;
+    if (currentPath.includes("cookies.html") || currentHref.includes("cookies.html")) {
+        console.log("Updating cookies policy content");
+        document.querySelector("h1").textContent = translations[currentLanguage].cookies_title;
+        
         const cookiesIntro = document.querySelector(".cookies-intro");
         if (cookiesIntro) {
             cookiesIntro.textContent = translations[currentLanguage].cookies_intro;
@@ -502,8 +513,10 @@ function updateContent() {
             const listKey = `cookies_section${sectionNum}_list`;
 
             if (translations[currentLanguage][titleKey]) {
-                section.querySelector("h2").textContent =
-                    translations[currentLanguage][titleKey];
+                const h2 = section.querySelector("h2");
+                if (h2) {
+                    h2.textContent = translations[currentLanguage][titleKey];
+                }
             }
             if (translations[currentLanguage][contentKey]) {
                 const p = section.querySelector("p");
