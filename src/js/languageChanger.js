@@ -15,6 +15,15 @@ const translations = {
         cookies: "Cookies Policy",
         learn_more: "Learn More",
 
+        // About Us Page
+        about_title: "What is TeamUp?",
+        about_intro: "TeamUp is a platform designed to connect competitive video game players from around the world. Our mission is to help you find teammates who share your interests, favorite games, and skill level. TeamUp makes the process quick, simple, and fun.",
+        about_mission_title: "Our Mission",
+        about_mission_content: "At TeamUp, we believe that video games are not just entertainment, but also a powerful way to build communities and connections. Our goal is to break down the barriers that players face when looking for teammates, creating an inclusive, safe, and personalized experience for every gamer.",
+        about_join_title: "Join Us",
+        about_join_content: "Be part of a community of gamers who share your passion. TeamUp is designed to help you get the most out of your matches and improve your gaming experience.",
+        about_cta: "Connect, play, and level up with TeamUp!",
+
         // Contact Form
         contact_title: "Contact",
         name_label: "Name",
@@ -167,6 +176,15 @@ const translations = {
         cookies: "Políticas de cookies",
         learn_more: "Saber más",
 
+        // About Us Page
+        about_title: "¿Qué es TeamUp?",
+        about_intro: "TeamUp es una plataforma diseñada para conectar a jugadores de videojuegos competitivos de todo el mundo. Nuestra misión es ayudarte a encontrar compañeros de equipo que compartan tus intereses, juegos favoritos y nivel de habilidad. TeamUp hace que el proceso sea rápido, sencillo y divertido.",
+        about_mission_title: "Nuestra Misión",
+        about_mission_content: "En TeamUp, creemos que los videojuegos no solo son entretenimiento, sino también una forma poderosa de construir comunidades y conexiones. Nuestro objetivo es derribar las barreras que enfrentan los jugadores al buscar compañeros de equipo, creando una experiencia inclusiva, segura y adaptada a cada gamer.",
+        about_join_title: "Únete a Nosotros",
+        about_join_content: "Forma parte de una comunidad de gamers que comparten tu pasión. TeamUp está diseñado para ayudarte a disfrutar al máximo de tus partidas y mejorar tu experiencia de juego.",
+        about_cta: "¡Conecta, juega y sube al siguiente nivel con TeamUp!",
+
         // Contact Form
         contact_title: "Contacto",
         name_label: "Nombre",
@@ -311,6 +329,7 @@ let currentLanguage = "es";
 function changeLanguage(lang) {
     if (translations[lang]) {
         currentLanguage = lang;
+        document.documentElement.setAttribute('lang', lang);
         updateContent();
         updateLanguageButton(lang);
         localStorage.setItem("preferredLanguage", lang);
@@ -318,7 +337,9 @@ function changeLanguage(lang) {
 }
 
 function updateContent() {
-    // Update navigation
+    console.log("Cambiando idioma a: " + currentLanguage);
+    
+    // 1. Update navigation
     document.querySelectorAll("nav a").forEach((link) => {
         if (link.href.includes("sobre_nosotros.html")) {
             link.textContent = translations[currentLanguage].nav_about;
@@ -329,25 +350,88 @@ function updateContent() {
         }
     });
 
-    // Update breadcrumb
+    // 2. Update breadcrumb
     const breadcrumbSpan = document.querySelector(".breadcrumb span");
     if (breadcrumbSpan) {
-        const currentPage = window.location.pathname;
-        if (currentPage.includes("contacto.html")) {
+        const currentUrl = window.location.href.toLowerCase();
+        
+        if (currentUrl.includes("contacto.html")) {
             breadcrumbSpan.textContent = translations[currentLanguage].contact;
-        } else if (currentPage.includes("sobre_nosotros.html")) {
+        } else if (currentUrl.includes("sobre_nosotros.html")) {
             breadcrumbSpan.textContent = translations[currentLanguage].about;
-        } else if (currentPage.includes("descargar.html")) {
+        } else if (currentUrl.includes("descargar.html")) {
             breadcrumbSpan.textContent = translations[currentLanguage].download;
-        } else if (currentPage.includes("p_privacidad.html")) {
+        } else if (currentUrl.includes("p_privacidad.html")) {
             breadcrumbSpan.textContent = translations[currentLanguage].privacy;
-        } else if (currentPage.includes("terminos_uso.html")) {
+        } else if (currentUrl.includes("terminos_uso.html")) {
             breadcrumbSpan.textContent = translations[currentLanguage].terms;
-        } else if (currentPage.includes("cookies.html")) {
+        } else if (currentUrl.includes("cookies.html")) {
             breadcrumbSpan.textContent = translations[currentLanguage].cookies;
         }
     }
 
+    // 3. Update contact form if it exists
+    updateContactForm();
+    
+    // 4. Update footer
+    updateFooter();
+    
+    // 5. Update page content based on URL
+    const currentUrl = window.location.href.toLowerCase();
+    
+    if (currentUrl.includes("p_privacidad.html")) {
+        updatePrivacyPage();
+    } else if (currentUrl.includes("terminos_uso.html")) {
+        updateTermsPage();
+    } else if (currentUrl.includes("cookies.html")) {
+        updateCookiesPage();
+    } else if (currentUrl.includes("sobre_nosotros.html")) {
+        updateAboutPage();
+    }
+}
+
+function updateAboutPage() {
+    console.log("Actualizando página sobre nosotros");
+    
+    // Update title and intro
+    const heroSection = document.querySelector(".hero");
+    if (heroSection) {
+        const h1 = heroSection.querySelector("h1");
+        if (h1) h1.textContent = translations[currentLanguage].about_title;
+        
+        const p = heroSection.querySelector("p");
+        if (p) p.textContent = translations[currentLanguage].about_intro;
+    }
+    
+    // Update mission section
+    const missionSection = document.querySelector(".mission");
+    if (missionSection) {
+        const h2 = missionSection.querySelector("h2");
+        if (h2) h2.textContent = translations[currentLanguage].about_mission_title;
+        
+        const p = missionSection.querySelector("p");
+        if (p) p.textContent = translations[currentLanguage].about_mission_content;
+    }
+    
+    // Update join section
+    const joinSection = document.querySelector(".join");
+    if (joinSection) {
+        const h2 = joinSection.querySelector("h2");
+        if (h2) h2.textContent = translations[currentLanguage].about_join_title;
+        
+        const p = joinSection.querySelector("p");
+        if (p) p.textContent = translations[currentLanguage].about_join_content;
+    }
+    
+    // Update CTA section
+    const ctaSection = document.querySelector(".cta");
+    if (ctaSection) {
+        const h2 = ctaSection.querySelector("h2");
+        if (h2) h2.textContent = translations[currentLanguage].about_cta;
+    }
+}
+
+function updateContactForm() {
     // Update form labels if on contact page
     const formLabels = document.querySelectorAll(".form-group label");
     formLabels.forEach((label) => {
@@ -375,8 +459,10 @@ function updateContent() {
     if (submitBtn) {
         submitBtn.textContent = translations[currentLanguage].send_button;
     }
+}
 
-    // Update footer
+function updateFooter() {
+    // Update footer headings
     document.querySelectorAll(".footer-links h4").forEach((heading) => {
         if (heading.textContent.includes("TeamUp")) {
             heading.textContent = "TeamUp";
@@ -401,140 +487,87 @@ function updateContent() {
             link.textContent = translations[currentLanguage].footer_cookies;
         }
     });
+}
 
-    // Determine current page by pathname or filename
-    const currentPath = window.location.pathname;
-    const currentHref = window.location.href;
+function updatePrivacyPage() {
+    console.log("Actualizando página de privacidad");
+    
+    // Update title
+    const h1 = document.querySelector("h1");
+    if (h1) h1.textContent = translations[currentLanguage].privacy_title;
+    
+    // Update intro
+    const intro = document.querySelector(".privacy-intro");
+    if (intro) intro.textContent = translations[currentLanguage].privacy_intro;
+    
+    // Update all sections
+    document.querySelectorAll(".privacy-section").forEach((section, index) => {
+        const sectionNum = index + 1;
+        updateSection(section, "privacy", sectionNum);
+    });
+}
 
-    // Update privacy policy page content
-    if (currentPath.includes("p_privacidad.html") || currentHref.includes("p_privacidad.html")) {
-        console.log("Updating privacy policy content");
-        document.querySelector("h1").textContent = translations[currentLanguage].privacy_title;
-        
-        const privacyIntro = document.querySelector(".privacy-intro");
-        if (privacyIntro) {
-            privacyIntro.textContent = translations[currentLanguage].privacy_intro;
-        }
+function updateTermsPage() {
+    console.log("Actualizando página de términos");
+    
+    // Update title
+    const h1 = document.querySelector("h1");
+    if (h1) h1.textContent = translations[currentLanguage].terms_title;
+    
+    // Update intro
+    const intro = document.querySelector(".terms-intro");
+    if (intro) intro.textContent = translations[currentLanguage].terms_intro;
+    
+    // Update all sections
+    document.querySelectorAll(".terms-section").forEach((section, index) => {
+        const sectionNum = index + 1;
+        updateSection(section, "terms", sectionNum);
+    });
+}
 
-        // Update sections
-        const sections = document.querySelectorAll(".privacy-section");
-        sections.forEach((section, index) => {
-            const sectionNum = index + 1;
-            const titleKey = `privacy_section${sectionNum}_title`;
-            const contentKey = `privacy_section${sectionNum}_content`;
-            const listKey = `privacy_section${sectionNum}_list`;
+function updateCookiesPage() {
+    console.log("Actualizando página de cookies");
+    
+    // Update title
+    const h1 = document.querySelector("h1");
+    if (h1) h1.textContent = translations[currentLanguage].cookies_title;
+    
+    // Update intro
+    const intro = document.querySelector(".cookies-intro");
+    if (intro) intro.textContent = translations[currentLanguage].cookies_intro;
+    
+    // Update all sections
+    document.querySelectorAll(".cookies-section").forEach((section, index) => {
+        const sectionNum = index + 1;
+        updateSection(section, "cookies", sectionNum);
+    });
+}
 
-            if (translations[currentLanguage][titleKey]) {
-                const h2 = section.querySelector("h2");
-                if (h2) {
-                    h2.textContent = translations[currentLanguage][titleKey];
-                }
-            }
-            if (translations[currentLanguage][contentKey]) {
-                const p = section.querySelector("p");
-                if (p) {
-                    p.textContent = translations[currentLanguage][contentKey];
-                }
-            }
-            if (translations[currentLanguage][listKey]) {
-                const ul = section.querySelector("ul");
-                if (ul) {
-                    ul.innerHTML = "";
-                    translations[currentLanguage][listKey].forEach((item) => {
-                        const li = document.createElement("li");
-                        li.textContent = item;
-                        ul.appendChild(li);
-                    });
-                }
-            }
-        });
+function updateSection(section, prefix, sectionNum) {
+    const titleKey = `${prefix}_section${sectionNum}_title`;
+    const contentKey = `${prefix}_section${sectionNum}_content`;
+    const listKey = `${prefix}_section${sectionNum}_list`;
+    
+    // Update title
+    const h2 = section.querySelector("h2");
+    if (h2 && translations[currentLanguage][titleKey]) {
+        h2.textContent = translations[currentLanguage][titleKey];
     }
-
-    // Update terms of use page content
-    if (currentPath.includes("terminos_uso.html") || currentHref.includes("terminos_uso.html")) {
-        console.log("Updating terms of use content");
-        document.querySelector("h1").textContent = translations[currentLanguage].terms_title;
-        
-        const termsIntro = document.querySelector(".terms-intro");
-        if (termsIntro) {
-            termsIntro.textContent = translations[currentLanguage].terms_intro;
-        }
-
-        // Update sections
-        const sections = document.querySelectorAll(".terms-section");
-        sections.forEach((section, index) => {
-            const sectionNum = index + 1;
-            const titleKey = `terms_section${sectionNum}_title`;
-            const contentKey = `terms_section${sectionNum}_content`;
-            const listKey = `terms_section${sectionNum}_list`;
-
-            if (translations[currentLanguage][titleKey]) {
-                const h2 = section.querySelector("h2");
-                if (h2) {
-                    h2.textContent = translations[currentLanguage][titleKey];
-                }
-            }
-            if (translations[currentLanguage][contentKey]) {
-                const p = section.querySelector("p");
-                if (p) {
-                    p.textContent = translations[currentLanguage][contentKey];
-                }
-            }
-            if (translations[currentLanguage][listKey]) {
-                const ul = section.querySelector("ul");
-                if (ul) {
-                    ul.innerHTML = "";
-                    translations[currentLanguage][listKey].forEach((item) => {
-                        const li = document.createElement("li");
-                        li.textContent = item;
-                        ul.appendChild(li);
-                    });
-                }
-            }
-        });
+    
+    // Update content paragraph
+    const p = section.querySelector("p");
+    if (p && translations[currentLanguage][contentKey]) {
+        p.textContent = translations[currentLanguage][contentKey];
     }
-
-    // Update cookies policy page content
-    if (currentPath.includes("cookies.html") || currentHref.includes("cookies.html")) {
-        console.log("Updating cookies policy content");
-        document.querySelector("h1").textContent = translations[currentLanguage].cookies_title;
-        
-        const cookiesIntro = document.querySelector(".cookies-intro");
-        if (cookiesIntro) {
-            cookiesIntro.textContent = translations[currentLanguage].cookies_intro;
-        }
-
-        // Update sections
-        const sections = document.querySelectorAll(".cookies-section");
-        sections.forEach((section, index) => {
-            const sectionNum = index + 1;
-            const titleKey = `cookies_section${sectionNum}_title`;
-            const contentKey = `cookies_section${sectionNum}_content`;
-            const listKey = `cookies_section${sectionNum}_list`;
-
-            if (translations[currentLanguage][titleKey]) {
-                const h2 = section.querySelector("h2");
-                if (h2) {
-                    h2.textContent = translations[currentLanguage][titleKey];
-                }
-            }
-            if (translations[currentLanguage][contentKey]) {
-                const p = section.querySelector("p");
-                if (p) {
-                    p.textContent = translations[currentLanguage][contentKey];
-                }
-            }
-            if (translations[currentLanguage][listKey]) {
-                const ul = section.querySelector("ul");
-                if (ul) {
-                    ul.innerHTML = "";
-                    translations[currentLanguage][listKey].forEach((item) => {
-                        const li = document.createElement("li");
-                        li.textContent = item;
-                        ul.appendChild(li);
-                    });
-                }
-            }
+    
+    // Update list items if they exist
+    const ul = section.querySelector("ul");
+    if (ul && translations[currentLanguage][listKey]) {
+        ul.innerHTML = "";
+        translations[currentLanguage][listKey].forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            ul.appendChild(li);
         });
     }
 }
