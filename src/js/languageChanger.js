@@ -446,7 +446,7 @@ const translations = {
     }
 };
 
-let currentLanguage = "es";
+let currentLanguage = localStorage.getItem('language') || 'es';
 
 function changeLanguage(lang) {
     if (translations[lang]) {
@@ -706,14 +706,15 @@ function updateSection(section, prefix, sectionNum) {
 }
 
 function updateLanguageButton(lang) {
-    const button = document.querySelector(".language-switcher button");
-    if (button) {
-        if (lang === "es") {
-            button.textContent = "🌍 Español ▼";
-        } else if (lang === "en") {
-            button.textContent = "🌍 English ▼";
-        } else if (lang === "de") {
-            button.textContent = "🌍 Deutsch ▼";
+    const languageButton = document.querySelector('.language-switcher button');
+    if (languageButton) {
+        // Actualizar el texto del botón según el idioma seleccionado
+        if (lang === 'en') {
+            languageButton.textContent = '🌍 English ▼';
+        } else if (lang === 'de') {
+            languageButton.textContent = '🌍 Deutsch ▼';
+        } else {
+            languageButton.textContent = '🌍 Español ▼';
         }
     }
 }
@@ -1334,3 +1335,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+

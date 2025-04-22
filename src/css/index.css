@@ -339,7 +339,7 @@ footer {
     display: none;
     list-style: none;
     padding: 10px;
-    margin: 10px auto;
+    margin-top: 5px;
     background: rgba(6, 13, 23, 0.95);
     border: 1px solid rgba(64, 169, 255, 0.1);
     border-radius: 15px;
@@ -351,6 +351,17 @@ footer {
 
 .language-switcher:hover ul {
     display: block;
+}
+
+/* Añadir un espacio invisible para evitar que el menú desaparezca */
+.language-switcher ul::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
 }
 
 .language-switcher li {
