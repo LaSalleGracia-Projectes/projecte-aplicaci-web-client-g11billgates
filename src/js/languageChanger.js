@@ -69,25 +69,87 @@ const translations = {
             "To comply with legal obligations",
             "To protect our rights and safety",
         ],
+        privacy_section4_title: "4. Data Security",
+        privacy_section4_content: "We implement security measures to protect your personal information against unauthorized access or disclosure.",
+        privacy_section5_title: "5. Your Rights",
+        privacy_section5_content: "You have the right to access, correct or delete your personal information. To exercise these rights, contact us.",
+        privacy_section6_title: "6. Changes to this Policy",
+        privacy_section6_content: "We may update this policy periodically. We will notify you of significant changes.",
+        privacy_section7_title: "7. Contact",
+        privacy_section7_content: "If you have questions about this policy, contact us at: privacy@teamup.com",
 
         // Terms of Use Page
         terms_title: "Terms of Use",
         terms_intro:
             "By accessing and using TeamUp, you agree to be bound by these Terms of Use.",
-        terms_section1_title: "1. Account Registration",
+        terms_section1_title: "1. Acceptance of Terms",
         terms_section1_content:
-            "When creating an account, you must provide accurate and complete information. You are responsible for maintaining the confidentiality of your account.",
-        terms_section2_title: "2. User Conduct",
-        terms_section2_content: "You agree not to:",
-        terms_section2_list: [
-            "Violate any applicable laws",
-            "Impersonate others",
-            "Share harmful content",
-            "Attempt to gain unauthorized access",
+            "By accessing or using the TeamUp platform, you agree to comply with these Terms of Use.",
+        terms_section2_title: "2. Service Description",
+        terms_section2_content: "TeamUp is a platform for connecting players and organizing matches. Its use is personal and non-commercial.",
+        terms_section3_title: "3. Eligibility Requirements",
+        terms_section3_content: "You must be at least 18 years old or the minimum legal age in your country.",
+        terms_section4_title: "4. Account Registration and Security",
+        terms_section4_content: "You are responsible for maintaining the security of your account.",
+        terms_section4_list: [
+            "You are responsible for the security of your credentials.",
+            "Do not share your account or use it for illicit purposes.",
         ],
-        terms_section3_title: "3. Intellectual Property",
-        terms_section3_content:
-            "All content on TeamUp is protected by intellectual property rights. You may not use, modify, or distribute our content without permission.",
+        terms_section5_title: "5. User Conduct",
+        terms_section5_content: "You agree not to:",
+        terms_section5_list: [
+            "Use the platform only for legitimate purposes.",
+            "Respect other users and avoid toxic behavior.",
+            "Do not post offensive or illegal content.",
+        ],
+        terms_section6_title: "6. User Generated Content",
+        terms_section6_content: "By uploading content, you grant TeamUp a worldwide license to display and modify it.",
+        terms_section7_title: "7. Limitation of Liability",
+        terms_section7_content: "TeamUp is not responsible for certain aspects:",
+        terms_section7_list: [
+            "TeamUp does not guarantee that the service is error-free.",
+            "We are not responsible for data loss or technical problems.",
+        ],
+        terms_section8_title: "8. Intellectual Property",
+        terms_section8_content: "All content on TeamUp is owned or licensed by us.",
+        terms_section9_title: "9. Account Suspension or Termination",
+        terms_section9_content: "We may delete your account if you violate these terms.",
+        terms_section10_title: "10. Terms Modifications",
+        terms_section10_content: "We reserve the right to update these terms at any time.",
+        terms_section11_title: "11. Applicable Law",
+        terms_section11_content: "These terms are governed by the laws of the country where our headquarters are located.",
+        terms_section12_title: "12. Contact",
+        terms_section12_content: "If you have questions, contact us at: support@teamup.com",
+
+        // Cookies Policy Page
+        cookies_title: "Cookies Policy",
+        cookies_intro: "This policy explains what cookies are, how we use them at TeamUp, and your options regarding their use. By using our platform, you accept the use of cookies as described in this policy.",
+        cookies_section1_title: "1. What are cookies?",
+        cookies_section1_content: "Cookies are small text files that are stored on your device when you visit a website. These allow the website to remember your preferences and improve your browsing experience.",
+        cookies_section2_title: "2. Types of cookies we use",
+        cookies_section2_content: "We use different types of cookies for various purposes:",
+        cookies_section2_list: [
+            "Essential Cookies: Necessary for the basic functioning of the platform.",
+            "Performance Cookies: Help us analyze the use of the platform to improve its functionality.",
+            "Personalization Cookies: Store your preferences for a more tailored experience.",
+            "Advertising Cookies: Used to show relevant ads based on your interests.",
+        ],
+        cookies_section3_title: "3. Why we use cookies",
+        cookies_section3_content: "We use cookies for several important reasons:",
+        cookies_section3_list: [
+            "Ensure our platform works correctly.",
+            "Remember your preferences and personalize your experience.",
+            "Analyze traffic and performance of our application.",
+            "Show you relevant and personalized ads.",
+        ],
+        cookies_section4_title: "4. Cookie Management",
+        cookies_section4_content: "You can manage and control the use of cookies from your browser settings.",
+        cookies_section5_title: "5. Third-Party Cookies",
+        cookies_section5_content: "Some third-party platforms may also use cookies on our site.",
+        cookies_section6_title: "6. Changes to this Policy",
+        cookies_section6_content: "We may update our Cookie Policy at any time.",
+        cookies_section7_title: "7. Contact",
+        cookies_section7_content: "If you have questions about our Cookie Policy, contact us at: support@teamup.com",
     },
     es: {
         // Header
@@ -161,25 +223,86 @@ const translations = {
             "Para cumplir con obligaciones legales",
             "Para proteger nuestros derechos y seguridad",
         ],
+        privacy_section4_title: "4. Seguridad de Datos",
+        privacy_section4_content: "Implementamos medidas de seguridad para proteger su información personal contra acceso no autorizado o divulgación.",
+        privacy_section5_title: "5. Sus Derechos",
+        privacy_section5_content: "Tiene derecho a acceder, corregir o eliminar su información personal. Para ejercer estos derechos, contáctenos.",
+        privacy_section6_title: "6. Cambios a esta Política",
+        privacy_section6_content: "Podemos actualizar esta política periódicamente. Le notificaremos sobre cambios significativos.",
+        privacy_section7_title: "7. Contacto",
+        privacy_section7_content: "Si tiene preguntas sobre esta política, contáctenos en: privacidad@teamup.com",
 
         // Terms of Use Page
         terms_title: "Términos de Uso",
         terms_intro:
             "Al acceder y utilizar TeamUp, aceptas estar sujeto a estos Términos de Uso.",
-        terms_section1_title: "1. Registro de Cuenta",
-        terms_section1_content:
-            "Al crear una cuenta, debes proporcionar información precisa y completa. Eres responsable de mantener la confidencialidad de tu cuenta.",
-        terms_section2_title: "2. Conducta del Usuario",
-        terms_section2_content: "Te comprometes a no:",
-        terms_section2_list: [
-            "Violar cualquier ley aplicable",
-            "Suplantar a otros",
-            "Compartir contenido dañino",
-            "Intentar obtener acceso no autorizado",
+        terms_section1_title: "1. Aceptación de los Términos",
+        terms_section1_content: "Al acceder o utilizar la plataforma TeamUp, aceptas cumplir con estos Términos de Uso.",
+        terms_section2_title: "2. Descripción del Servicio",
+        terms_section2_content: "TeamUp es una plataforma para conectar jugadores y organizar partidas. Su uso es personal y no comercial.",
+        terms_section3_title: "3. Requisitos de Elegibilidad",
+        terms_section3_content: "Debes tener al menos 18 años o la edad mínima legal en tu país.",
+        terms_section4_title: "4. Registro y Seguridad de la Cuenta",
+        terms_section4_content: "Eres responsable de mantener la seguridad de tu cuenta.",
+        terms_section4_list: [
+            "Eres responsable de la seguridad de tus credenciales.",
+            "No compartas tu cuenta ni la uses con fines ilícitos.",
         ],
-        terms_section3_title: "3. Propiedad Intelectual",
-        terms_section3_content:
-            "Todo el contenido en TeamUp está protegido por derechos de propiedad intelectual. No puedes usar, modificar o distribuir nuestro contenido sin permiso.",
+        terms_section5_title: "5. Conducta del Usuario",
+        terms_section5_content: "Te comprometes a no:",
+        terms_section5_list: [
+            "Usa la plataforma solo para fines legítimos.",
+            "Respeta a otros usuarios y evita comportamientos tóxicos.",
+            "No publiques contenido ofensivo o ilegal.",
+        ],
+        terms_section6_title: "6. Contenido Generado por el Usuario",
+        terms_section6_content: "Al subir contenido, concedes a TeamUp una licencia mundial para mostrar y modificarlo.",
+        terms_section7_title: "7. Limitación de Responsabilidad",
+        terms_section7_content: "TeamUp no se hace responsable de ciertos aspectos:",
+        terms_section7_list: [
+            "TeamUp no garantiza que el servicio esté libre de errores.",
+            "No somos responsables de pérdida de datos o problemas técnicos.",
+        ],
+        terms_section8_title: "8. Propiedad Intelectual",
+        terms_section8_content: "Todo el contenido de TeamUp es de nuestra propiedad o está licenciado.",
+        terms_section9_title: "9. Suspensión o Terminación de la Cuenta",
+        terms_section9_content: "Podemos eliminar tu cuenta si incumples estos términos.",
+        terms_section10_title: "10. Modificaciones a los Términos",
+        terms_section10_content: "Nos reservamos el derecho de actualizar estos términos en cualquier momento.",
+        terms_section11_title: "11. Ley Aplicable",
+        terms_section11_content: "Estos términos se rigen por las leyes del país donde se encuentra nuestra sede.",
+        terms_section12_title: "12. Contacto",
+        terms_section12_content: "Si tienes preguntas, contáctanos en: soporte@teamup.com",
+
+        // Cookies Policy Page
+        cookies_title: "Política de Cookies",
+        cookies_intro: "Esta política explica qué son las cookies, cómo las utilizamos en TeamUp, y tus opciones respecto al uso de estas. Al usar nuestra plataforma, aceptas el uso de cookies tal como se describe en esta política.",
+        cookies_section1_title: "1. ¿Qué son las cookies?",
+        cookies_section1_content: "Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Estas permiten al sitio web recordar tus preferencias y mejorar tu experiencia de navegación.",
+        cookies_section2_title: "2. Tipos de cookies que utilizamos",
+        cookies_section2_content: "Utilizamos diferentes tipos de cookies para distintos propósitos:",
+        cookies_section2_list: [
+            "Cookies Esenciales: Son necesarias para el funcionamiento básico de la plataforma.",
+            "Cookies de Rendimiento: Nos ayudan a analizar el uso de la plataforma para mejorar su funcionalidad.",
+            "Cookies de Personalización: Almacenan tus preferencias para una experiencia más adaptada.",
+            "Cookies de Publicidad: Se utilizan para mostrar anuncios relevantes basados en tus intereses.",
+        ],
+        cookies_section3_title: "3. ¿Por qué usamos cookies?",
+        cookies_section3_content: "Utilizamos cookies por varios motivos importantes:",
+        cookies_section3_list: [
+            "Garantizar que nuestra plataforma funcione correctamente.",
+            "Recordar tus preferencias y personalizar tu experiencia.",
+            "Analizar el tráfico y el rendimiento de nuestra aplicación.",
+            "Mostrarte anuncios relevantes y personalizados.",
+        ],
+        cookies_section4_title: "4. Gestión de Cookies",
+        cookies_section4_content: "Puedes gestionar y controlar el uso de cookies desde la configuración de tu navegador.",
+        cookies_section5_title: "5. Cookies de Terceros",
+        cookies_section5_content: "Algunas plataformas de terceros también pueden utilizar cookies en nuestro sitio.",
+        cookies_section6_title: "6. Cambios en esta Política",
+        cookies_section6_content: "Podemos actualizar nuestra Política de Cookies en cualquier momento.",
+        cookies_section7_title: "7. Contacto",
+        cookies_section7_content: "Si tienes dudas sobre nuestra Política de Cookies, contáctanos en: soporte@teamup.com",
     },
 };
 
@@ -216,6 +339,12 @@ function updateContent() {
             breadcrumbSpan.textContent = translations[currentLanguage].about;
         } else if (currentPage.includes("descargar.html")) {
             breadcrumbSpan.textContent = translations[currentLanguage].download;
+        } else if (currentPage.includes("p_privacidad.html")) {
+            breadcrumbSpan.textContent = translations[currentLanguage].privacy;
+        } else if (currentPage.includes("terminos_uso.html")) {
+            breadcrumbSpan.textContent = translations[currentLanguage].terms;
+        } else if (currentPage.includes("cookies.html")) {
+            breadcrumbSpan.textContent = translations[currentLanguage].cookies;
         }
     }
 
@@ -249,8 +378,8 @@ function updateContent() {
 
     // Update footer
     document.querySelectorAll(".footer-links h4").forEach((heading) => {
-        if (heading.textContent.includes("Descargar")) {
-            heading.textContent = translations[currentLanguage].footer_download;
+        if (heading.textContent.includes("TeamUp")) {
+            heading.textContent = "TeamUp";
         } else if (heading.textContent.includes("Legal")) {
             heading.textContent = translations[currentLanguage].footer_legal;
         }
@@ -258,7 +387,13 @@ function updateContent() {
 
     // Update footer links
     document.querySelectorAll(".footer-links a").forEach((link) => {
-        if (link.href.includes("terminos_uso.html")) {
+        if (link.href.includes("sobre_nosotros.html")) {
+            link.textContent = translations[currentLanguage].nav_about;
+        } else if (link.href.includes("contacto.html")) {
+            link.textContent = translations[currentLanguage].nav_contact;
+        } else if (link.href.includes("descargar.html")) {
+            link.textContent = translations[currentLanguage].nav_download;
+        } else if (link.href.includes("terminos_uso.html")) {
             link.textContent = translations[currentLanguage].footer_terms;
         } else if (link.href.includes("p_privacidad.html")) {
             link.textContent = translations[currentLanguage].footer_privacy;
@@ -271,8 +406,10 @@ function updateContent() {
     if (window.location.pathname.includes("p_privacidad.html")) {
         document.querySelector("h1").textContent =
             translations[currentLanguage].privacy_title;
-        document.querySelector(".privacy-intro").textContent =
-            translations[currentLanguage].privacy_intro;
+        const privacyIntro = document.querySelector(".privacy-intro");
+        if (privacyIntro) {
+            privacyIntro.textContent = translations[currentLanguage].privacy_intro;
+        }
 
         // Update sections
         const sections = document.querySelectorAll(".privacy-section");
@@ -287,15 +424,20 @@ function updateContent() {
                     translations[currentLanguage][titleKey];
             }
             if (translations[currentLanguage][contentKey]) {
-                section.querySelector("p").textContent =
-                    translations[currentLanguage][contentKey];
+                const p = section.querySelector("p");
+                if (p) {
+                    p.textContent = translations[currentLanguage][contentKey];
+                }
             }
             if (translations[currentLanguage][listKey]) {
                 const ul = section.querySelector("ul");
                 if (ul) {
-                    ul.innerHTML = translations[currentLanguage][listKey]
-                        .map((item) => `<li>${item}</li>`)
-                        .join("");
+                    ul.innerHTML = "";
+                    translations[currentLanguage][listKey].forEach((item) => {
+                        const li = document.createElement("li");
+                        li.textContent = item;
+                        ul.appendChild(li);
+                    });
                 }
             }
         });
@@ -305,8 +447,10 @@ function updateContent() {
     if (window.location.pathname.includes("terminos_uso.html")) {
         document.querySelector("h1").textContent =
             translations[currentLanguage].terms_title;
-        document.querySelector(".terms-intro").textContent =
-            translations[currentLanguage].terms_intro;
+        const termsIntro = document.querySelector(".terms-intro");
+        if (termsIntro) {
+            termsIntro.textContent = translations[currentLanguage].terms_intro;
+        }
 
         // Update sections
         const sections = document.querySelectorAll(".terms-section");
@@ -321,15 +465,61 @@ function updateContent() {
                     translations[currentLanguage][titleKey];
             }
             if (translations[currentLanguage][contentKey]) {
-                section.querySelector("p").textContent =
-                    translations[currentLanguage][contentKey];
+                const p = section.querySelector("p");
+                if (p) {
+                    p.textContent = translations[currentLanguage][contentKey];
+                }
             }
             if (translations[currentLanguage][listKey]) {
                 const ul = section.querySelector("ul");
                 if (ul) {
-                    ul.innerHTML = translations[currentLanguage][listKey]
-                        .map((item) => `<li>${item}</li>`)
-                        .join("");
+                    ul.innerHTML = "";
+                    translations[currentLanguage][listKey].forEach((item) => {
+                        const li = document.createElement("li");
+                        li.textContent = item;
+                        ul.appendChild(li);
+                    });
+                }
+            }
+        });
+    }
+
+    // Update cookies policy page content
+    if (window.location.pathname.includes("cookies.html")) {
+        document.querySelector("h1").textContent =
+            translations[currentLanguage].cookies_title;
+        const cookiesIntro = document.querySelector(".cookies-intro");
+        if (cookiesIntro) {
+            cookiesIntro.textContent = translations[currentLanguage].cookies_intro;
+        }
+
+        // Update sections
+        const sections = document.querySelectorAll(".cookies-section");
+        sections.forEach((section, index) => {
+            const sectionNum = index + 1;
+            const titleKey = `cookies_section${sectionNum}_title`;
+            const contentKey = `cookies_section${sectionNum}_content`;
+            const listKey = `cookies_section${sectionNum}_list`;
+
+            if (translations[currentLanguage][titleKey]) {
+                section.querySelector("h2").textContent =
+                    translations[currentLanguage][titleKey];
+            }
+            if (translations[currentLanguage][contentKey]) {
+                const p = section.querySelector("p");
+                if (p) {
+                    p.textContent = translations[currentLanguage][contentKey];
+                }
+            }
+            if (translations[currentLanguage][listKey]) {
+                const ul = section.querySelector("ul");
+                if (ul) {
+                    ul.innerHTML = "";
+                    translations[currentLanguage][listKey].forEach((item) => {
+                        const li = document.createElement("li");
+                        li.textContent = item;
+                        ul.appendChild(li);
+                    });
                 }
             }
         });
