@@ -387,6 +387,8 @@ function updateContent() {
         updateCookiesPage();
     } else if (currentUrl.includes("sobre_nosotros.html")) {
         updateAboutPage();
+    } else if (currentUrl.includes("contacto.html")) {
+        updateContactPage();
     }
 }
 
@@ -576,6 +578,42 @@ function updateLanguageButton(lang) {
     const button = document.querySelector(".language-switcher button");
     if (button) {
         button.textContent = lang === "es" ? "🌍 Español ▼" : "🌍 English ▼";
+    }
+}
+
+function updateContactPage() {
+    console.log("Actualizando página de contacto");
+    
+    // Update title
+    const contactTitle = document.querySelector(".contact-form h1");
+    if (contactTitle) {
+        contactTitle.textContent = translations[currentLanguage].contact_title;
+    }
+    
+    // Update form labels
+    const formLabels = document.querySelectorAll(".form-group label");
+    formLabels.forEach((label) => {
+        if (label.getAttribute("for") === "name") {
+            label.textContent = translations[currentLanguage].name_label;
+        } else if (label.getAttribute("for") === "email") {
+            label.textContent = translations[currentLanguage].email_label;
+        } else if (label.getAttribute("for") === "subject") {
+            label.textContent = translations[currentLanguage].subject_label;
+        } else if (label.getAttribute("for") === "message") {
+            label.textContent = translations[currentLanguage].message_label;
+        } else if (label.getAttribute("for") === "privacy") {
+            const privacyLink = label.querySelector("a");
+            if (privacyLink) {
+                label.childNodes[0].textContent = translations[currentLanguage].privacy_checkbox + " ";
+                privacyLink.textContent = translations[currentLanguage].privacy_link;
+            }
+        }
+    });
+
+    // Update submit button
+    const submitBtn = document.querySelector(".submit-btn");
+    if (submitBtn) {
+        submitBtn.textContent = translations[currentLanguage].send_button;
     }
 }
 
