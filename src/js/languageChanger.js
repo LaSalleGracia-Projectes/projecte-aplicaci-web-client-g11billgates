@@ -367,6 +367,8 @@ function updateContent() {
             breadcrumbSpan.textContent = translations[currentLanguage].terms;
         } else if (currentUrl.includes("cookies.html")) {
             breadcrumbSpan.textContent = translations[currentLanguage].cookies;
+        } else if (currentUrl.includes("saber_mas.html")) {
+            breadcrumbSpan.textContent = translations[currentLanguage].learn_more;
         }
     }
 
@@ -391,6 +393,9 @@ function updateContent() {
         updateContactPage();
     } else if (currentUrl.includes("descargar.html")) {
         updateDownloadPage();
+    } else if (currentUrl.includes("index.html") || currentUrl.endsWith("/") || currentUrl.endsWith("g11billgates/")) {
+        // Index page or root URL
+        updateIndexPage();
     }
 }
 
@@ -841,6 +846,147 @@ function updateDownloadPage() {
             termsNotice.innerHTML = currentLanguage === "es"
                 ? `Al descargar TeamUp, aceptas nuestros <a href="terminos_uso.html">Términos de Uso</a> y nuestra <a href="p_privacidad.html">Política de Privacidad</a>.`
                 : `By downloading TeamUp, you accept our <a href="terminos_uso.html">Terms of Use</a> and our <a href="p_privacidad.html">Privacy Policy</a>.`;
+        }
+    }
+}
+
+function updateIndexPage() {
+    console.log("Actualizando página principal");
+    
+    // Update hero section
+    const heroSection = document.querySelector(".hero");
+    if (heroSection) {
+        const h1 = heroSection.querySelector("h1");
+        if (h1) {
+            if (currentLanguage === "es") {
+                h1.innerHTML = `
+                    Conecta con jugadores como tú.
+                    <br />
+                    Organiza partidas. Forma equipos.
+                    <br />
+                    Todo en un solo lugar.
+                `;
+            } else {
+                h1.innerHTML = `
+                    Connect with players like you.
+                    <br />
+                    Organize matches. Form teams.
+                    <br />
+                    All in one place.
+                `;
+            }
+        }
+        
+        const ctaButton = heroSection.querySelector(".cta-button");
+        if (ctaButton) {
+            ctaButton.textContent = currentLanguage === "es" ? "Obtener TeamUp" : "Get TeamUp";
+        }
+    }
+    
+    // Update features section
+    const soloGaming = document.querySelector("#feature-solo-gaming");
+    if (soloGaming) {
+        const h2 = soloGaming.querySelector("h2");
+        if (h2) h2.textContent = "Solo gaming";
+        
+        const p = soloGaming.querySelector("p");
+        if (p) {
+            p.textContent = currentLanguage === "es" 
+                ? "Encuentra gente, comparte habilidades, haz equipos y gana."
+                : "Find people, share skills, make teams and win.";
+        }
+        
+        const button = soloGaming.querySelector("button");
+        if (button) {
+            button.textContent = currentLanguage === "es" ? "Descargar ahora" : "Download now";
+        }
+    }
+    
+    const nuevoAqui = document.querySelector("#feature-nuevo-aqui");
+    if (nuevoAqui) {
+        const h2 = nuevoAqui.querySelector("h2");
+        if (h2) {
+            h2.textContent = currentLanguage === "es" ? "¿Nuevo aquí?" : "New here?";
+        }
+        
+        const p = nuevoAqui.querySelector("p");
+        if (p) {
+            p.textContent = currentLanguage === "es" 
+                ? "Descubre cómo funciona" 
+                : "Discover how it works";
+        }
+        
+        const btn = nuevoAqui.querySelector(".btn");
+        if (btn) {
+            btn.textContent = currentLanguage === "es" ? "Saber más" : "Learn more";
+        }
+    }
+    
+    const amigos = document.querySelector("#feature-amigos");
+    if (amigos) {
+        const h2 = amigos.querySelector("h2");
+        if (h2) {
+            h2.textContent = currentLanguage === "es" ? "Amigos" : "Friends";
+        }
+        
+        const p = amigos.querySelector("p");
+        if (p) {
+            p.textContent = currentLanguage === "es" 
+                ? "Encuentra nuevos amigos para jugar o simplemente chatear sobre tu juego favorito."
+                : "Find new friends to play with or just chat about your favorite game.";
+        }
+    }
+    
+    const crecimiento = document.querySelector("#feature-crecimiento");
+    if (crecimiento) {
+        const h2 = crecimiento.querySelector("h2");
+        if (h2) {
+            h2.textContent = currentLanguage === "es" ? "Crecimiento continuo" : "Continuous growth";
+        }
+        
+        const p = crecimiento.querySelector("p");
+        if (p) {
+            p.textContent = currentLanguage === "es" 
+                ? "Únete a una comunidad activa con miles de gamers."
+                : "Join an active community with thousands of gamers.";
+        }
+    }
+    
+    const match = document.querySelector("#feature-match");
+    if (match) {
+        const h2 = match.querySelector("h2");
+        if (h2) {
+            h2.textContent = currentLanguage === "es" ? "Match instantáneo" : "Instant match";
+        }
+        
+        const p = match.querySelector("p");
+        if (p) {
+            p.textContent = currentLanguage === "es" 
+                ? "Haz match con jugadores compatibles y comienza a planear partidas."
+                : "Match with compatible players and start planning games.";
+        }
+    }
+    
+    // Update CTA section
+    const ctaSection = document.querySelector(".cta");
+    if (ctaSection) {
+        const h2 = ctaSection.querySelector("h2");
+        if (h2) {
+            h2.textContent = currentLanguage === "es" 
+                ? "Es hora de poner el gaming en el centro" 
+                : "It's time to put gaming at the center";
+        }
+        
+        const p = ctaSection.querySelector(".cta-text");
+        if (p) {
+            p.textContent = currentLanguage === "es" 
+                ? "Di adiós a #partidas-solitarías, #toxicity, y #buscar-sin-éxito #jugadores-compatibles."
+                : "Say goodbye to #solo-gaming, #toxicity, and #unsuccessful-search for #compatible-players.";
+        }
+        
+        const button = ctaSection.querySelector(".cta-button");
+        if (button) {
+            button.textContent = currentLanguage === "es" ? "Descargar ahora" : "Download now";
         }
     }
 }
