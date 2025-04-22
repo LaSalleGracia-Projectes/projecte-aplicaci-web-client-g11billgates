@@ -338,6 +338,15 @@ const translations = {
         cookies: "Cookie-Richtlinie",
         learn_more: "Mehr erfahren",
 
+        // About Us Page
+        about_title: "Was ist TeamUp?",
+        about_intro: "TeamUp ist eine Plattform, die Spieler von Wettbewerbsspielen aus der ganzen Welt miteinander verbindet. Unsere Mission ist es, dir zu helfen, Teamkollegen zu finden, die deine Interessen, Lieblingsspiele und dein Fähigkeitsniveau teilen. TeamUp macht den Prozess schnell, einfach und unterhaltsam.",
+        about_mission_title: "Unsere Mission",
+        about_mission_content: "Bei TeamUp glauben wir, dass Videospiele nicht nur Unterhaltung sind, sondern auch eine kraftvolle Möglichkeit, Gemeinschaften und Verbindungen aufzubauen. Unser Ziel ist es, die Barrieren abzubauen, mit denen Spieler bei der Suche nach Teamkollegen konfrontiert werden, und ein inklusives, sicheres und personalisiertes Erlebnis für jeden Gamer zu schaffen.",
+        about_join_title: "Mach mit",
+        about_join_content: "Werde Teil einer Gemeinschaft von Gamern, die deine Leidenschaft teilen. TeamUp wurde entwickelt, um dir zu helfen, das Beste aus deinen Matches herauszuholen und dein Spielerlebnis zu verbessern.",
+        about_cta: "Verbinde dich, spiele und steige mit TeamUp auf die nächste Stufe!",
+
         // Index Page
         index_hero_connect: "Verbinde dich mit Spielern wie dir.",
         index_hero_organize: "Organisiere Spiele. Bilde Teams.",
