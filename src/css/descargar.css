@@ -720,6 +720,7 @@ footer {
     background: #071426;
     color: white;
     padding: 60px 20px 40px;
+    position: relative;
 }
 
 .footer-links {
@@ -767,8 +768,10 @@ footer {
 
 .language-switcher {
     text-align: center;
-    margin: 30px 0;
-    position: relative;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    margin: 0;
 }
 
 .language-switcher button {
@@ -798,8 +801,7 @@ footer {
     border-radius: 15px;
     width: max-content;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;
     z-index: 100;
 }
 
@@ -812,6 +814,7 @@ footer {
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 10px;
+    white-space: nowrap;
 }
 
 .language-switcher li:hover {
@@ -955,6 +958,17 @@ footer {
     
     .mobile-only {
         display: block !important;
+    }
+
+    .language-switcher {
+        position: static;
+        margin: 30px 0;
+    }
+    
+    .language-switcher ul {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 

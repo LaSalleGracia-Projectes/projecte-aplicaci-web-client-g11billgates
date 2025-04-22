@@ -150,6 +150,63 @@ footer {
     background: #071426;
     color: white;
     padding: 60px 20px 40px;
+    position: relative;
+}
+
+.language-switcher {
+    text-align: center;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    margin: 0;
+}
+
+.language-switcher button {
+    background: rgba(64, 169, 255, 0.1);
+    border: 1px solid rgba(64, 169, 255, 0.2);
+    color: #8BB8E8;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.language-switcher button:hover {
+    background: rgba(64, 169, 255, 0.2);
+    color: #40A9FF;
+    transform: translateY(-2px);
+}
+
+.language-switcher ul {
+    display: none;
+    list-style: none;
+    padding: 10px;
+    margin: 10px auto;
+    background: rgba(6, 13, 23, 0.95);
+    border: 1px solid rgba(64, 169, 255, 0.1);
+    border-radius: 15px;
+    width: max-content;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+}
+
+.language-switcher:hover ul {
+    display: block;
+}
+
+.language-switcher li {
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.language-switcher li:hover {
+    background: rgba(64, 169, 255, 0.1);
+    color: #40A9FF;
 }
 
 .footer-links {
@@ -190,55 +247,6 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #40A9FF;
-}
-
-.language-switcher {
-    text-align: center;
-    margin: 30px 0;
-}
-
-.language-switcher button {
-    background: rgba(64, 169, 255, 0.1);
-    border: 1px solid rgba(64, 169, 255, 0.2);
-    color: #8BB8E8;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.9em;
-}
-
-.language-switcher button:hover {
-    background: rgba(64, 169, 255, 0.2);
-    color: #40A9FF;
-    transform: translateY(-2px);
-}
-
-.language-switcher ul {
-    display: none;
-    list-style: none;
-    padding: 10px;
-    margin: 10px auto;
-    background: rgba(6, 13, 23, 0.95);
-    border: 1px solid rgba(64, 169, 255, 0.1);
-    border-radius: 15px;
-    width: max-content;
-}
-
-.language-switcher:hover ul {
-    display: block;
-}
-
-.language-switcher li {
-    padding: 8px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 10px;
-}
-
-.language-switcher li:hover {
-    background: rgba(64, 169, 255, 0.1);
     color: #40A9FF;
 }
 
@@ -338,6 +346,17 @@ footer {
     .content h2 {
         font-size: 1.3em;
     }
+
+    .language-switcher {
+        position: static;
+        margin: 30px 0;
+    }
+    
+    .language-switcher ul {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 /* Responsive Design */
@@ -351,73 +370,6 @@ footer {
     }
     .footer-links {
         gap: 60px;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 15px;
-    }
-    
-    .mobile-only {
-        display: block;
-    }
-    
-    .hamburger-menu {
-        display: block;
-    }
-    
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        max-width: 300px;
-        height: 100vh;
-        background: rgba(6, 13, 23, 0.98);
-        padding: 80px 20px 40px;
-        transition: right 0.3s ease;
-        z-index: 1000;
-        overflow-y: auto;
-        backdrop-filter: blur(10px);
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-    }
-    
-    .nav-menu.active {
-        right: 0;
-    }
-    
-    .nav-menu ul {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .nav-menu ul li {
-        margin: 0;
-        width: 100%;
-    }
-    
-    .nav-menu ul li a {
-        display: block;
-        padding: 12px 15px;
-        width: 100%;
-        border-radius: 8px;
-    }
-    
-    .content {
-        padding: 25px;
-        margin: 30px auto;
-    }
-    .content h1 {
-        font-size: 1.6em;
-    }
-    .footer-links {
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
-    }
-    .footer-links div {
-        text-align: center;
     }
 }
 
