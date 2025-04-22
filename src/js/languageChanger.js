@@ -485,6 +485,82 @@ const translations = {
         terms_section11_content: "Diese Bedingungen unterliegen den Gesetzen des Landes, in dem sich unser Hauptsitz befindet.",
         terms_section12_title: "12. Kontakt",
         terms_section12_content: "Bei Fragen kontaktiere uns unter: support@teamup.com",
+
+        // Privacy Policy Page
+        privacy_title: "Datenschutzrichtlinie",
+        privacy_intro:
+            "Willkommen bei TeamUp. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Informationen sammeln, verwenden, offenlegen und schützen, wenn Sie unsere Plattform nutzen.",
+        privacy_section1_title: "1. Informationen, die wir sammeln",
+        privacy_section1_content:
+            "Wir sammeln Informationen, die Sie uns direkt zur Verfügung stellen, einschließlich, aber nicht beschränkt auf:",
+        privacy_section1_list: [
+            "Name und Kontaktinformationen",
+            "Kontoanmeldedaten",
+            "Profilinformationen",
+            "Kommunikationspräferenzen",
+        ],
+        privacy_section2_title: "2. Wie wir Ihre Informationen verwenden",
+        privacy_section2_content: "Wir verwenden die gesammelten Informationen, um:",
+        privacy_section2_list: [
+            "Unsere Dienste bereitzustellen und zu pflegen",
+            "Die Benutzererfahrung zu verbessern",
+            "Wichtige Benachrichtigungen zu senden",
+            "Auf Ihre Anfragen zu antworten",
+        ],
+        privacy_section3_title: "3. Informationsaustausch",
+        privacy_section3_content:
+            "Wir verkaufen oder vermieten Ihre persönlichen Daten nicht an Dritte. Wir können Ihre Informationen nur unter folgenden Umständen teilen:",
+        privacy_section3_list: [
+            "Mit Ihrer Zustimmung",
+            "Um gesetzlichen Verpflichtungen nachzukommen",
+            "Um unsere Rechte und Sicherheit zu schützen",
+        ],
+        privacy_section4_title: "4. Datensicherheit",
+        privacy_section4_content: "Wir implementieren Sicherheitsmaßnahmen, um Ihre persönlichen Daten vor unbefugtem Zugriff oder Offenlegung zu schützen.",
+        privacy_section5_title: "5. Ihre Rechte",
+        privacy_section5_content: "Sie haben das Recht, auf Ihre persönlichen Daten zuzugreifen, sie zu korrigieren oder zu löschen. Um diese Rechte auszuüben, kontaktieren Sie uns bitte.",
+        privacy_section6_title: "6. Änderungen dieser Richtlinie",
+        privacy_section6_content: "Wir können diese Richtlinie regelmäßig aktualisieren. Wir werden Sie über wesentliche Änderungen informieren.",
+        privacy_section7_title: "7. Kontakt",
+        privacy_section7_content: "Wenn Sie Fragen zu dieser Richtlinie haben, kontaktieren Sie uns unter: datenschutz@teamup.com",
+
+        // Learn More Page
+        learn_more_title: "Entdecke alles, was du mit TeamUp machen kannst",
+        learn_more_intro: "Dein Raum, um Spielpartner zu finden, Spiele zu organisieren und dich mit Gamern wie dir zu verbinden.",
+        
+        // Features 
+        compatible_players_title: "Finde kompatible Spieler",
+        compatible_players_list: [
+            "Filtere nach Level, Spiel und Standort.",
+            "Matche mit Spielern, die zu deinem Spielstil passen."
+        ],
+        
+        real_time_chat_title: "Integrierter Echtzeit-Chat in der App",
+        real_time_chat_text: "Sprich mit deinen neuen Teamkollegen und organisiere Spiele, ohne die App zu verlassen.",
+        
+        create_teams_title: "Erstelle und tritt Teams bei",
+        create_teams_text: "Bilde stabile Gruppen, um an Turnieren teilzunehmen oder Gelegenheitsspiele zu spielen.",
+        
+        advanced_filters_title: "Erweiterte Filter",
+        advanced_filters_text: "Spezifische Suche nach Regionen, Fähigkeiten oder Rollen im Spiel.",
+        
+        // Why TeamUp
+        why_teamup_title: "Warum TeamUp nutzen?",
+        why_teamup_list: [
+            "Optimiere deine Zeit: Vergiss die Suche in Foren oder sozialen Netzwerken. Hier ist alles schnell und direkt.",
+            "Steigere deine Leistung: Spiele mit Personen, die dir helfen, dein Level zu verbessern.",
+            "Finde neue Freunde: Verbinde dich mit Gamern, die deine Interessen teilen.",
+            "Sichere und toxizitätsfreie Erfahrung: Tools zum Melden und Blockieren von negativem Verhalten."
+        ],
+        
+        // FAQ
+        faq_title: "Häufig gestellte Fragen",
+        faq_question1: "Was ist TeamUp und wie funktioniert es?",
+        faq_answer1: "TeamUp ist eine Plattform, die dir hilft, kompatible Spieler basierend auf deinen Lieblingsspielen, deinem Fähigkeitsniveau und deinem Spielstil zu finden. Erstelle einfach dein Profil, wische, um Spieler zu finden, und matche mit denen, die deine Interessen teilen.",
+        faq_question2: "Ist TeamUp kostenlos?",
+        faq_answer2: "Ja, TeamUp bietet grundlegende Funktionen kostenlos an. In Zukunft könnten wir Premium-Optionen mit erweiterten Funktionen anbieten.",
+        faq_question3: "Auf welchen Plattformen ist TeamUp verfügbar?",
+        faq_answer3: "Derzeit ist TeamUp für iOS verfügbar.",
     }
 };
 
@@ -1187,16 +1263,24 @@ function updateLearnMorePage() {
     if (heroSection) {
         const h1 = heroSection.querySelector("h1");
         if (h1) {
-            h1.textContent = currentLanguage === "es" 
-                ? "Descubre Todo lo que Puedes Hacer con TeamUp" 
-                : "Discover Everything You Can Do with TeamUp";
+            if (currentLanguage === "es") {
+                h1.textContent = "Descubre Todo lo que Puedes Hacer con TeamUp";
+            } else if (currentLanguage === "en") {
+                h1.textContent = "Discover Everything You Can Do with TeamUp";
+            } else if (currentLanguage === "de") {
+                h1.textContent = translations.de.learn_more_title;
+            }
         }
         
         const p = heroSection.querySelector("p");
         if (p) {
-            p.innerHTML = currentLanguage === "es" 
-                ? "<em>Tu espacio para encontrar compañeros de juego, organizar partidas y conectar con gamers como tú.</em>" 
-                : "<em>Your space to find gaming companions, organize matches and connect with gamers like you.</em>";
+            if (currentLanguage === "es") {
+                p.innerHTML = "<em>Tu espacio para encontrar compañeros de juego, organizar partidas y conectar con gamers como tú.</em>";
+            } else if (currentLanguage === "en") {
+                p.innerHTML = "<em>Your space to find gaming companions, organize matches and connect with gamers like you.</em>";
+            } else if (currentLanguage === "de") {
+                p.innerHTML = "<em>" + translations.de.learn_more_intro + "</em>";
+            }
         }
     }
     
@@ -1205,20 +1289,27 @@ function updateLearnMorePage() {
     if (jugadoresCompatibles) {
         const h2 = jugadoresCompatibles.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" 
-                ? "Encuentra Jugadores Compatibles" 
-                : "Find Compatible Players";
+            if (currentLanguage === "es") {
+                h2.textContent = "Encuentra Jugadores Compatibles";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "Find Compatible Players";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.compatible_players_title;
+            }
         }
         
         const liItems = jugadoresCompatibles.querySelectorAll("ul li");
         if (liItems.length >= 2) {
-            liItems[0].textContent = currentLanguage === "es" 
-                ? "Filtra por nivel, juego y ubicación."
-                : "Filter by level, game and location.";
-            
-            liItems[1].textContent = currentLanguage === "es" 
-                ? "Haz match con jugadores que se ajusten a tu estilo."
-                : "Match with players that fit your style.";
+            if (currentLanguage === "es") {
+                liItems[0].textContent = "Filtra por nivel, juego y ubicación.";
+                liItems[1].textContent = "Haz match con jugadores que se ajusten a tu estilo.";
+            } else if (currentLanguage === "en") {
+                liItems[0].textContent = "Filter by level, game and location.";
+                liItems[1].textContent = "Match with players that fit your style.";
+            } else if (currentLanguage === "de" && translations.de.compatible_players_list) {
+                liItems[0].textContent = translations.de.compatible_players_list[0];
+                liItems[1].textContent = translations.de.compatible_players_list[1];
+            }
         }
     }
     
@@ -1226,16 +1317,24 @@ function updateLearnMorePage() {
     if (chatTiempoReal) {
         const h2 = chatTiempoReal.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" 
-                ? "Chat Integrado en Tiempo Real dentro de la app" 
-                : "Integrated Real-Time Chat within the app";
+            if (currentLanguage === "es") {
+                h2.textContent = "Chat Integrado en Tiempo Real dentro de la app";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "Integrated Real-Time Chat within the app";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.real_time_chat_title;
+            }
         }
         
         const p = chatTiempoReal.querySelector("p");
         if (p) {
-            p.textContent = currentLanguage === "es" 
-                ? "Habla con tus nuevos compañeros y organiza partidas sin salir de la app."
-                : "Talk to your new teammates and organize matches without leaving the app.";
+            if (currentLanguage === "es") {
+                p.textContent = "Habla con tus nuevos compañeros y organiza partidas sin salir de la app.";
+            } else if (currentLanguage === "en") {
+                p.textContent = "Talk to your new teammates and organize matches without leaving the app.";
+            } else if (currentLanguage === "de") {
+                p.textContent = translations.de.real_time_chat_text;
+            }
         }
     }
     
@@ -1243,16 +1342,24 @@ function updateLearnMorePage() {
     if (crearEquipos) {
         const h2 = crearEquipos.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" 
-                ? "Crea y Únete a Equipos" 
-                : "Create and Join Teams";
+            if (currentLanguage === "es") {
+                h2.textContent = "Crea y Únete a Equipos";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "Create and Join Teams";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.create_teams_title;
+            }
         }
         
         const p = crearEquipos.querySelector("p");
         if (p) {
-            p.textContent = currentLanguage === "es" 
-                ? "Forma grupos estables para competir en torneos o jugar partidas casuales."
-                : "Form stable groups to compete in tournaments or play casual matches.";
+            if (currentLanguage === "es") {
+                p.textContent = "Forma grupos estables para competir en torneos o jugar partidas casuales.";
+            } else if (currentLanguage === "en") {
+                p.textContent = "Form stable groups to compete in tournaments or play casual matches.";
+            } else if (currentLanguage === "de") {
+                p.textContent = translations.de.create_teams_text;
+            }
         }
     }
     
@@ -1260,16 +1367,24 @@ function updateLearnMorePage() {
     if (filtrosAvanzados) {
         const h2 = filtrosAvanzados.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" 
-                ? "Filtros Avanzados" 
-                : "Advanced Filters";
+            if (currentLanguage === "es") {
+                h2.textContent = "Filtros Avanzados";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "Advanced Filters";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.advanced_filters_title;
+            }
         }
         
         const p = filtrosAvanzados.querySelector("p");
         if (p) {
-            p.textContent = currentLanguage === "es" 
-                ? "Búsqueda específica por regiones, habilidades o roles en el juego."
-                : "Specific search by regions, skills or roles in the game.";
+            if (currentLanguage === "es") {
+                p.textContent = "Búsqueda específica por regiones, habilidades o roles en el juego.";
+            } else if (currentLanguage === "en") {
+                p.textContent = "Specific search by regions, skills or roles in the game.";
+            } else if (currentLanguage === "de") {
+                p.textContent = translations.de.advanced_filters_text;
+            }
         }
     }
     
@@ -1278,28 +1393,33 @@ function updateLearnMorePage() {
     if (whyTeamup) {
         const h2 = whyTeamup.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" 
-                ? "¿Por qué usar TeamUp?" 
-                : "Why use TeamUp?";
+            if (currentLanguage === "es") {
+                h2.textContent = "¿Por qué usar TeamUp?";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "Why use TeamUp?";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.why_teamup_title;
+            }
         }
         
         const liItems = whyTeamup.querySelectorAll("ul li");
         if (liItems.length >= 4) {
-            liItems[0].textContent = currentLanguage === "es" 
-                ? "Optimiza tu tiempo: Olvídate de buscar en foros o redes sociales. Aquí todo es rápido y directo."
-                : "Optimize your time: Forget about searching in forums or social networks. Here everything is quick and direct.";
-            
-            liItems[1].textContent = currentLanguage === "es" 
-                ? "Aumenta tu rendimiento: Juega con personas que te ayuden a subir de nivel."
-                : "Increase your performance: Play with people who help you level up.";
-            
-            liItems[2].textContent = currentLanguage === "es" 
-                ? "Haz nuevos amigos: Conéctate con gamers que comparten tus mismos intereses."
-                : "Make new friends: Connect with gamers who share your same interests.";
-            
-            liItems[3].textContent = currentLanguage === "es" 
-                ? "Experiencia segura y sin toxicidad: Herramientas para reportar y bloquear comportamientos negativos."
-                : "Safe and toxicity-free experience: Tools to report and block negative behaviors.";
+            if (currentLanguage === "es") {
+                liItems[0].textContent = "Optimiza tu tiempo: Olvídate de buscar en foros o redes sociales. Aquí todo es rápido y directo.";
+                liItems[1].textContent = "Aumenta tu rendimiento: Juega con personas que te ayuden a subir de nivel.";
+                liItems[2].textContent = "Haz nuevos amigos: Conéctate con gamers que comparten tus mismos intereses.";
+                liItems[3].textContent = "Experiencia segura y sin toxicidad: Herramientas para reportar y bloquear comportamientos negativos.";
+            } else if (currentLanguage === "en") {
+                liItems[0].textContent = "Optimize your time: Forget about searching in forums or social networks. Here everything is quick and direct.";
+                liItems[1].textContent = "Increase your performance: Play with people who help you level up.";
+                liItems[2].textContent = "Make new friends: Connect with gamers who share your same interests.";
+                liItems[3].textContent = "Safe and toxicity-free experience: Tools to report and block negative behaviors.";
+            } else if (currentLanguage === "de" && translations.de.why_teamup_list) {
+                liItems[0].textContent = translations.de.why_teamup_list[0];
+                liItems[1].textContent = translations.de.why_teamup_list[1];
+                liItems[2].textContent = translations.de.why_teamup_list[2];
+                liItems[3].textContent = translations.de.why_teamup_list[3];
+            }
         }
     }
     
@@ -1308,9 +1428,13 @@ function updateLearnMorePage() {
     if (faqSection) {
         const h2 = faqSection.querySelector("h2");
         if (h2) {
-            h2.textContent = currentLanguage === "es" 
-                ? "Preguntas Frecuentes" 
-                : "Frequently Asked Questions";
+            if (currentLanguage === "es") {
+                h2.textContent = "Preguntas Frecuentes";
+            } else if (currentLanguage === "en") {
+                h2.textContent = "Frequently Asked Questions";
+            } else if (currentLanguage === "de") {
+                h2.textContent = translations.de.faq_title;
+            }
         }
         
         const details = faqSection.querySelectorAll("details");
@@ -1319,39 +1443,48 @@ function updateLearnMorePage() {
             const summary1 = details[0].querySelector("summary");
             const p1 = details[0].querySelector("p");
             if (summary1 && p1) {
-                summary1.textContent = currentLanguage === "es" 
-                    ? "¿Qué es TeamUp y cómo funciona?"
-                    : "What is TeamUp and how does it work?";
-                
-                p1.textContent = currentLanguage === "es" 
-                    ? "TeamUp es una plataforma que te ayuda a encontrar jugadores compatibles según tus juegos favoritos, nivel de habilidad y estilo de juego. Simplemente crea tu perfil, desliza para encontrar jugadores y haz match con quienes compartan tus intereses."
-                    : "TeamUp is a platform that helps you find compatible players based on your favorite games, skill level, and play style. Simply create your profile, swipe to find players, and match with those who share your interests.";
+                if (currentLanguage === "es") {
+                    summary1.textContent = "¿Qué es TeamUp y cómo funciona?";
+                    p1.textContent = "TeamUp es una plataforma que te ayuda a encontrar jugadores compatibles según tus juegos favoritos, nivel de habilidad y estilo de juego. Simplemente crea tu perfil, desliza para encontrar jugadores y haz match con quienes compartan tus intereses.";
+                } else if (currentLanguage === "en") {
+                    summary1.textContent = "What is TeamUp and how does it work?";
+                    p1.textContent = "TeamUp is a platform that helps you find compatible players based on your favorite games, skill level, and play style. Simply create your profile, swipe to find players, and match with those who share your interests.";
+                } else if (currentLanguage === "de") {
+                    summary1.textContent = translations.de.faq_question1;
+                    p1.textContent = translations.de.faq_answer1;
+                }
             }
             
             // FAQ 2
             const summary2 = details[1].querySelector("summary");
             const p2 = details[1].querySelector("p");
             if (summary2 && p2) {
-                summary2.textContent = currentLanguage === "es" 
-                    ? "¿Es TeamUp gratuito?"
-                    : "Is TeamUp free?";
-                
-                p2.textContent = currentLanguage === "es" 
-                    ? "Sí, TeamUp ofrece funciones básicas de forma gratuita. En el futuro, podríamos ofrecer opciones premium con características avanzadas."
-                    : "Yes, TeamUp offers basic features for free. In the future, we might offer premium options with advanced features.";
+                if (currentLanguage === "es") {
+                    summary2.textContent = "¿Es TeamUp gratuito?";
+                    p2.textContent = "Sí, TeamUp ofrece funciones básicas de forma gratuita. En el futuro, podríamos ofrecer opciones premium con características avanzadas.";
+                } else if (currentLanguage === "en") {
+                    summary2.textContent = "Is TeamUp free?";
+                    p2.textContent = "Yes, TeamUp offers basic features for free. In the future, we might offer premium options with advanced features.";
+                } else if (currentLanguage === "de") {
+                    summary2.textContent = translations.de.faq_question2;
+                    p2.textContent = translations.de.faq_answer2;
+                }
             }
             
             // FAQ 3
             const summary3 = details[2].querySelector("summary");
             const p3 = details[2].querySelector("p");
             if (summary3 && p3) {
-                summary3.textContent = currentLanguage === "es" 
-                    ? "¿En qué plataformas está disponible TeamUp?"
-                    : "On which platforms is TeamUp available?";
-                
-                p3.textContent = currentLanguage === "es" 
-                    ? "Actualmente, TeamUp está disponible en iOS."
-                    : "Currently, TeamUp is available on iOS.";
+                if (currentLanguage === "es") {
+                    summary3.textContent = "¿En qué plataformas está disponible TeamUp?";
+                    p3.textContent = "Actualmente, TeamUp está disponible en iOS.";
+                } else if (currentLanguage === "en") {
+                    summary3.textContent = "On which platforms is TeamUp available?";
+                    p3.textContent = "Currently, TeamUp is available on iOS.";
+                } else if (currentLanguage === "de") {
+                    summary3.textContent = translations.de.faq_question3;
+                    p3.textContent = translations.de.faq_answer3;
+                }
             }
         }
     }
