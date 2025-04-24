@@ -325,16 +325,16 @@ const translations = {
             "TeamUp no garantiza que el servicio esté libre de errores.",
             "No somos responsables de pérdida de datos o problemas técnicos.",
         ],
-        terms_section8_title: "8. Propiedad Intelectual",
-        terms_section8_content: "Todo el contenido de TeamUp es de nuestra propiedad o está licenciado.",
-        terms_section9_title: "9. Suspensión o Terminación de la Cuenta",
-        terms_section9_content: "Podemos eliminar tu cuenta si incumples estos términos.",
-        terms_section10_title: "10. Modificaciones a los Términos",
-        terms_section10_content: "Nos reservamos el derecho de actualizar estos términos en cualquier momento.",
+        terms_section8_title: "8. Geistiges Eigentum",
+        terms_section8_content: "Alle Inhalte auf TeamUp sind unser Eigentum oder lizenziert.",
+        terms_section9_title: "9. Kontosperrung oder -kündigung",
+        terms_section9_content: "Wir können dein Konto löschen, wenn du gegen diese Bedingungen verstößt.",
+        terms_section10_title: "10. Änderungen der Bedingungen",
+        terms_section10_content: "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu aktualisieren.",
         terms_section11_title: "11. Ley Aplicable",
-        terms_section11_content: "Estos términos se rigen por las leyes del país donde se encuentra nuestra sede.",
-        terms_section12_title: "12. Contacto",
-        terms_section12_content: "Si tienes preguntas, contáctanos en: soporte@teamup.com",
+        terms_section11_content: "Diese Bedingungen unterliegen den Gesetzen des Landes, in dem sich unser Hauptsitz befindet.",
+        terms_section12_title: "12. Contact",
+        terms_section12_content: "Bei Fragen kontaktiere uns unter: support@teamup.com",
 
         // Cookies Policy Page
         cookies_title: "Política de Cookies",
@@ -649,6 +649,36 @@ const translations = {
         faq_answer2: "Ja, TeamUp bietet grundlegende Funktionen kostenlos an. In Zukunft könnten wir Premium-Optionen mit erweiterten Funktionen anbieten.",
         faq_question3: "Auf welchen Plattformen ist TeamUp verfügbar?",
         faq_answer3: "Derzeit ist TeamUp für iOS verfügbar.",
+
+        // Cookies Policy Page
+        cookies_title: "Cookie-Richtlinie",
+        cookies_intro: "Diese Richtlinie erklärt, was Cookies sind, wie wir sie bei TeamUp verwenden und welche Optionen Sie bezüglich ihrer Verwendung haben. Durch die Nutzung unserer Plattform akzeptieren Sie die Verwendung von Cookies wie in dieser Richtlinie beschrieben.",
+        cookies_section1_title: "1. Was sind Cookies?",
+        cookies_section1_content: "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie eine Website besuchen. Diese ermöglichen es der Website, Ihre Präferenzen zu speichern und Ihr Surferlebnis zu verbessern.",
+        cookies_section2_title: "2. Arten von Cookies, die wir verwenden",
+        cookies_section2_content: "Wir verwenden verschiedene Arten von Cookies für unterschiedliche Zwecke:",
+        cookies_section2_list: [
+            "Wesentliche Cookies: Notwendig für die grundlegende Funktionalität der Plattform.",
+            "Leistungs-Cookies: Helfen uns, die Nutzung der Plattform zu analysieren, um ihre Funktionalität zu verbessern.",
+            "Personalisierungs-Cookies: Speichern Ihre Präferenzen für ein maßgeschneidertes Erlebnis.",
+            "Werbe-Cookies: Werden verwendet, um relevante Anzeigen basierend auf Ihren Interessen anzuzeigen."
+        ],
+        cookies_section3_title: "3. Warum wir Cookies verwenden",
+        cookies_section3_content: "Wir verwenden Cookies aus mehreren wichtigen Gründen:",
+        cookies_section3_list: [
+            "Sicherstellen, dass unsere Plattform korrekt funktioniert.",
+            "Ihre Präferenzen speichern und Ihr Erlebnis personalisieren.",
+            "Verkehr und Leistung unserer Anwendung analysieren.",
+            "Ihnen relevante und personalisierte Anzeigen anzeigen."
+        ],
+        cookies_section4_title: "4. Cookie-Verwaltung",
+        cookies_section4_content: "Sie können die Verwendung von Cookies über die Einstellungen Ihres Browsers verwalten und kontrollieren.",
+        cookies_section5_title: "5. Cookies von Drittanbietern",
+        cookies_section5_content: "Einige Drittanbieter-Plattformen können auf unserer Website ebenfalls Cookies verwenden.",
+        cookies_section6_title: "6. Änderungen an dieser Richtlinie",
+        cookies_section6_content: "Wir können unsere Cookie-Richtlinie jederzeit aktualisieren.",
+        cookies_section7_title: "7. Kontakt",
+        cookies_section7_content: "Bei Fragen zu unserer Cookie-Richtlinie kontaktieren Sie uns unter: support@teamup.com",
     }
 };
 
@@ -879,7 +909,44 @@ function updateCookiesPage() {
     // Update all sections
     document.querySelectorAll(".cookies-section").forEach((section, index) => {
         const sectionNum = index + 1;
-        updateSection(section, "cookies", sectionNum);
+        const titleKey = `cookies_section${sectionNum}_title`;
+        const contentKey = `cookies_section${sectionNum}_content`;
+        const listKey = `cookies_section${sectionNum}_list`;
+        
+        // Update title
+        const h2 = section.querySelector("h2");
+        if (h2 && translations[currentLanguage][titleKey]) {
+            h2.textContent = translations[currentLanguage][titleKey];
+        }
+        
+        // Update content paragraph
+        const p = section.querySelector("p");
+        if (p && translations[currentLanguage][contentKey]) {
+            p.textContent = translations[currentLanguage][contentKey];
+        }
+        
+        // Update list items if they exist
+        const ul = section.querySelector("ul");
+        if (ul && translations[currentLanguage][listKey]) {
+            const liItems = ul.querySelectorAll("li");
+            const translatedItems = translations[currentLanguage][listKey];
+            
+            if (liItems.length > 0 && translatedItems) {
+                liItems.forEach((li, i) => {
+                    if (i < translatedItems.length) {
+                        li.textContent = translatedItems[i];
+                    }
+                });
+            } else if (translatedItems) {
+                // Si no hay elementos li existentes pero sí hay traducciones, crearlos
+                ul.innerHTML = "";
+                translatedItems.forEach(item => {
+                    const li = document.createElement("li");
+                    li.textContent = item;
+                    ul.appendChild(li);
+                });
+            }
+        }
     });
 }
 
