@@ -547,7 +547,7 @@ const translations = {
         // Why TeamUp
         why_teamup_title: "Warum TeamUp nutzen?",
         why_teamup_list: [
-            "Optimiere deine Zeit: Vergiss die Suche in Foren oder sozialen Netzwerken. Aquí todo es rápido y directo.",
+            "Optimiere deine Zeit: Vergiss die Suche in Foren oder sozialen Netzwerken. Hier ist alles schnell und direkt.",
             "Steigere deine Leistung: Spiele mit Personen, die dir helfen, dein Level zu verbessern.",
             "Finde neue Freunde: Verbinde dich mit Gamern, die deine Interessen teilen.",
             "Sichere und toxizitätsfreie Erfahrung: Tools zum Melden und Blockieren von negativem Verhalten."
