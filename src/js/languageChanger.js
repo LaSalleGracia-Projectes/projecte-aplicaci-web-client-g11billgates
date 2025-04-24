@@ -159,6 +159,50 @@ const translations = {
         cookies_section6_content: "We may update our Cookie Policy at any time.",
         cookies_section7_title: "7. Contact",
         cookies_section7_content: "If you have questions about our Cookie Policy, contact us at: support@teamup.com",
+
+        // Download Page
+        download_hero_title: "DOWNLOAD TEAMUP AND START PLAYING TODAY",
+        download_hero_subtitle: "Connect with players, organize matches and find perfect teammates",
+        download_device_title: "DOWNLOAD FOR YOUR DEVICE",
+        download_ios_description: "Available for iPhone and iPad with iOS 14 or higher",
+        download_button_ios: "DOWNLOAD FOR iOS",
+        download_exclusive_note: "Exclusive for Apple devices",
+        download_coming_soon: "Coming soon for other platforms",
+        download_update_title: "UPDATE TO THE LATEST VERSION",
+        download_version: "Version 2.5.1",
+        download_update_features: [
+            "New improved matchmaking system",
+            "Renewed and more intuitive interface",
+            "Support for new popular games",
+            "Bug fixes and performance improvements"
+        ],
+        download_update_button: "UPDATE NOW",
+        download_requirements_title: "SYSTEM REQUIREMENTS",
+        download_ios_requirements_title: "Requirements for iOS",
+        download_ios_requirements: [
+            "iOS 14.0 or higher",
+            "iPhone 8 or higher",
+            "iPad 6th generation or higher",
+            "500 MB free space",
+            "Internet connection",
+            "Apple ID account"
+        ],
+        download_faq_title: "FREQUENTLY ASKED QUESTIONS",
+        download_faq_titles: [
+            "How do I install TeamUp on my iPhone or iPad?",
+            "Is it compatible with all iOS devices?",
+            "Is the TeamUp app free for iOS?",
+            "How do I update to the latest version on iOS?",
+            "When will it be available for Android and PC?"
+        ],
+        download_faq_contents: [
+            "Simply download the app from this page or from the App Store, open the downloaded file and follow the on-screen installation instructions.",
+            "TeamUp is compatible with iPhone 8 or higher and iPad 6th generation or higher, as long as iOS 14.0 or a newer version is installed.",
+            "Yes, TeamUp is completely free for iOS devices. We offer optional premium features through a subscription, but all basic features are free.",
+            "The app will notify you when an update is available. You can also manually check for updates in the App Store or download the latest version from this page.",
+            "We are working on versions for Android and PC/Mac. Subscribe to our newsletter to be notified when they become available."
+        ],
+        download_terms_notice: "By downloading TeamUp, you accept our %terms% and our %privacy%.",
     },
     es: {
         // Header
@@ -321,6 +365,50 @@ const translations = {
         cookies_section6_content: "Podemos actualizar nuestra Política de Cookies en cualquier momento.",
         cookies_section7_title: "7. Contacto",
         cookies_section7_content: "Si tienes dudas sobre nuestra Política de Cookies, contáctanos en: soporte@teamup.com",
+
+        // Download Page
+        download_hero_title: "DESCARGA TEAMUP Y EMPIEZA A JUGAR HOY",
+        download_hero_subtitle: "Conecta con jugadores, organiza partidas y encuentra compañeros perfectos",
+        download_device_title: "DESCARGA PARA TU DISPOSITIVO",
+        download_ios_description: "Disponible para iPhone y iPad con iOS 14 o superior",
+        download_button_ios: "DESCARGAR PARA iOS",
+        download_exclusive_note: "Exclusivo para dispositivos Apple",
+        download_coming_soon: "Próximamente disponible para otras plataformas",
+        download_update_title: "ACTUALIZA A LA ÚLTIMA VERSIÓN",
+        download_version: "Versión 2.5.1",
+        download_update_features: [
+            "Nuevo sistema de matchmaking mejorado",
+            "Interfaz renovada y más intuitiva",
+            "Soporte para nuevos juegos populares",
+            "Corrección de errores y mejoras de rendimiento"
+        ],
+        download_update_button: "ACTUALIZAR AHORA",
+        download_requirements_title: "REQUISITOS DEL SISTEMA",
+        download_ios_requirements_title: "Requisitos para iOS",
+        download_ios_requirements: [
+            "iOS 14.0 o superior",
+            "iPhone 8 o superior",
+            "iPad de 6ª generación o superior",
+            "500 MB de espacio libre",
+            "Conexión a Internet",
+            "Cuenta de Apple ID"
+        ],
+        download_faq_title: "PREGUNTAS FRECUENTES",
+        download_faq_titles: [
+            "¿Cómo instalo TeamUp en mi iPhone o iPad?",
+            "¿Es compatible con todos los dispositivos iOS?",
+            "¿Es gratuita la aplicación TeamUp para iOS?",
+            "¿Cómo actualizo a la última versión en iOS?",
+            "¿Cuándo estará disponible para Android y PC?"
+        ],
+        download_faq_contents: [
+            "Simplemente descarga la aplicación desde esta página o desde la App Store, abre el archivo descargado y sigue las instrucciones de instalación en pantalla.",
+            "TeamUp es compatible con iPhone 8 o superior y iPad de 6ª generación o superior, siempre que tengan iOS 14.0 o una versión más reciente instalada.",
+            "Sí, TeamUp es completamente gratuita para dispositivos iOS. Ofrecemos funciones premium opcionales mediante suscripción, pero todas las funciones básicas son gratuitas.",
+            "La aplicación te notificará cuando haya una actualización disponible. También puedes verificar actualizaciones manualmente en la App Store o descargar la última versión desde esta página.",
+            "Estamos trabajando en las versiones para Android y PC/Mac. Suscríbete a nuestro boletín para recibir notificaciones cuando estén disponibles."
+        ],
+        download_terms_notice: "Al descargar TeamUp, aceptas nuestros %terms% y nuestra %privacy%.",
     },
     de: {
         // Header
