@@ -547,7 +547,7 @@ const translations = {
         // Why TeamUp
         why_teamup_title: "Warum TeamUp nutzen?",
         why_teamup_list: [
-            "Optimiere deine Zeit: Vergiss die Suche in Foren oder sozialen Netzwerken. Hier ist alles schnell und direkt.",
+            "Optimiere deine Zeit: Vergiss die Suche in Foren oder sozialen Netzwerken. Aquí todo es rápido y directo.",
             "Steigere deine Leistung: Spiele mit Personen, die dir helfen, dein Level zu verbessern.",
             "Finde neue Freunde: Verbinde dich mit Gamern, die deine Interessen teilen.",
             "Sichere und toxizitätsfreie Erfahrung: Tools zum Melden und Blockieren von negativem Verhalten."
@@ -573,6 +573,7 @@ function changeLanguage(lang) {
         updateContent();
         updateLanguageButton(lang);
         localStorage.setItem("preferredLanguage", lang);
+        console.log("Idioma cambiado a: " + lang);
     }
 }
 
@@ -1493,21 +1494,84 @@ function updateLearnMorePage() {
 // Initialize language from localStorage or default to Spanish
 document.addEventListener("DOMContentLoaded", () => {
     const savedLanguage = localStorage.getItem("preferredLanguage") || "es";
+    currentLanguage = savedLanguage;
     changeLanguage(savedLanguage);
-
-    // Add click events to language options
-    document.querySelectorAll(".language-switcher li").forEach((li) => {
-        li.addEventListener("click", () => {
-            let lang;
-            if (li.textContent.includes("English")) {
-                lang = "en";
-            } else if (li.textContent.includes("Español")) {
-                lang = "es";
-            } else if (li.textContent.includes("Deutsch")) {
-                lang = "de";
-            }
-            changeLanguage(lang);
-        });
-    });
+    
+    // Configurar el selector de idiomas
+    setupLanguageSelector();
 });
+
+function setupLanguageSelector() {
+    console.log("Configurando selector de idiomas");
+    
+    // Añadir IDs a los elementos de la lista si no existen
+    const languageSwitcher = document.querySelector('.language-switcher');
+    if (languageSwitcher) {
+        const languageList = languageSwitcher.querySelector('ul');
+        if (languageList) {
+            const items = languageList.querySelectorAll('li');
+            if (items.length >= 1 && !items[0].id) {
+                items[0].id = 'lang-es';
+            }
+            if (items.length >= 2 && !items[1].id) {
+                items[1].id = 'lang-en';
+            }
+            if (items.length >= 3 && !items[2].id) {
+                items[2].id = 'lang-de';
+            }
+        }
+    }
+    
+    // Configurar el botón y el menú desplegable
+    const languageButton = document.querySelector('.language-switcher button');
+    const languageList = document.querySelector('.language-switcher ul');
+    
+    // Evento para mostrar/ocultar la lista
+    if (languageButton && languageList) {
+        languageButton.addEventListener('click', function(e) {
+            console.log("Botón de idioma clickeado");
+            languageList.style.display = languageList.style.display === 'block' ? 'none' : 'block';
+            e.stopPropagation();
+        });
+    }
+    
+    // Configurar los items del menú desplegable
+    const langEs = document.getElementById('lang-es');
+    const langEn = document.getElementById('lang-en');
+    const langDe = document.getElementById('lang-de');
+    
+    if (langEs) {
+        langEs.addEventListener('click', function() {
+            console.log("Cambiando a español");
+            localStorage.setItem("preferredLanguage", "es");
+            changeLanguage('es');
+            if (languageList) languageList.style.display = 'none';
+        });
+    }
+    
+    if (langEn) {
+        langEn.addEventListener('click', function() {
+            console.log("Cambiando a inglés");
+            localStorage.setItem("preferredLanguage", "en");
+            changeLanguage('en');
+            if (languageList) languageList.style.display = 'none';
+        });
+    }
+    
+    if (langDe) {
+        langDe.addEventListener('click', function() {
+            console.log("Cambiando a alemán");
+            localStorage.setItem("preferredLanguage", "de");
+            changeLanguage('de');
+            if (languageList) languageList.style.display = 'none';
+        });
+    }
+    
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener('click', function(e) {
+        if (languageList && !e.target.closest('.language-switcher')) {
+            languageList.style.display = 'none';
+        }
+    });
+}
 
