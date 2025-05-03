@@ -26,14 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Construir el objeto JSON
+
         const data = {
             name,
             email,
             message: `${subject}\n\n${message}`,
         };
 
-        // Enviar petición a tu API
         fetch("http://localhost:3000/api/contact", {
             method: "POST",
             headers: {
