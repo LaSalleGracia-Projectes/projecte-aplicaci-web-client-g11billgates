@@ -5,14 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const formData = new FormData(form);
-
-        // Validaciones
-        const name = formData.get("name").trim();
-        const email = formData.get("email").trim();
-        const subject = formData.get("subject").trim();
-        const message = formData.get("message").trim();
-        const privacy = formData.get("privacy");
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const subject = form.subject.value.trim();
+        const message = form.message.value.trim();
+        const privacy = form.privacy.checked;
 
         if (!name || !email || !message || !subject) {
             showMessage("Por favor, completa todos los campos.", "error");
@@ -29,21 +26,34 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Enviar formulario mediante AJAX
-        fetch(form.action, {
+        // Construir el objeto JSON
+        const data = {
+            name,
+            email,
+            message: `${subject}\n\n${message}`,
+        };
+
+        // Enviar petición a tu API
+        fetch("http://localhost:3000/api/contact", {
             method: "POST",
-            body: formData,
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
         })
-            .then((response) => response.text())
-            .then((data) => {
-                showMessage(data, "success");
-                form.reset();
+            .then((response) => response.json())
+            .then((result) => {
+                if (result.message) {
+                    showMessage(result.message, "success");
+                    form.reset();
+                } else {
+                    showMessage("Mensaje enviado.", "success");
+                    form.reset();
+                }
             })
             .catch((error) => {
-                showMessage(
-                    "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
-                    "error"
-                );
+                console.error(error);
+                showMessage("Error al enviar el mensaje. Por favor, inténtalo de nuevo.", "error");
             });
     });
 
@@ -51,11 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
         messageContainer.textContent = message;
         messageContainer.className = `message-container ${type}`;
         messageContainer.style.display = "block";
-
-        // Hacer scroll hasta el mensaje
         messageContainer.scrollIntoView({ behavior: "smooth" });
 
-        // Ocultar el mensaje después de 5 segundos
         setTimeout(() => {
             messageContainer.style.display = "none";
         }, 5000);
